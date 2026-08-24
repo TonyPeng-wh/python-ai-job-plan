@@ -1,0 +1,31 @@
+"""
+.isspace() 判断是否全为空白
+
+基本语法：blank_is_found = text.isspace()
+返回类型是 bool。
+
+.isspace() 要求：
+至少有一个字符
+并且所有字符都是空白字符
+
+规则：
+字符串全部为空格、换行或制表符 → True
+包含正常文字                   → False
+空字符串 ""                    → False
+"""
+
+
+print("   ".isspace())    # True
+print("\t".isspace())     # True
+print(" 文档 ".isspace()) # False
+print("".isspace())       # False
+
+
+user_input = input("请输入内容：")
+
+cleaned_input = user_input.strip()
+
+if len(cleaned_input) == 0:
+    print("输入内容不能为空")
+else:
+    print("输入内容有效")

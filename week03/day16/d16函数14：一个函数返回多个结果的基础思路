@@ -1,0 +1,24 @@
+"""
+函数⑭：一个函数返回多个结果的基础思路
+比如既想知道：
+是否合格
+对应状态文字
+可以先写两个函数，各自负责一个结果。
+"""
+def retrieval_is_qualified(retrieval_score):
+    return retrieval_score >= 0.75
+
+
+def get_retrieval_status(retrieval_score):
+    if retrieval_score >= 0.75:
+        return "qualified"
+    else:
+        return "low_score"
+
+current_score = 0.82
+
+is_qualified = retrieval_is_qualified(current_score)
+retrieval_status = get_retrieval_status(current_score)
+
+print(is_qualified)
+print(retrieval_status)

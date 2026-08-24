@@ -1,0 +1,9 @@
+name = "TonyPeng"
+weekly_hours = 20
+daily_hours = weekly_hours / 7
+is_employed = False
+
+print(name, type(name))     #str：字符串，例如 "TonyPeng"
+print(weekly_hours, type(weekly_hours))  #int：整数，例如 20
+print(daily_hours, type(daily_hours))    #float：浮点数，例如 2.857142857142857
+print(is_employed, type(is_employed))    #bool：布尔值，例如 False

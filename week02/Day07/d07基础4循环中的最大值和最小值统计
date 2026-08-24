@@ -1,0 +1,76 @@
+"""
+例题一：统计模型回答最高评分
+
+评分范围规定为 0～100。
+
+变量含义
+highest_score
+含义：目前发现的最高评分
+类型：int
+初始值：0
+发现更高评分时更新
+score_number
+含义：当前评分编号
+类型：int
+依次保存 1、2、3、4、5
+current_score
+含义：当前输入的评分
+类型：int
+每轮保存一个新的分数
+"""
+
+# # highest_score：最高评分
+# highest_score = 0
+
+# # score_number：评分编号
+# for score_number in range(1, 6):
+#     # current_score:当前输入评分
+#     current_score = int(
+#         input(f"第{score_number}次评分为：")
+#     )
+#     if current_score > highest_score:
+#         highest_score = current_score
+
+# print(f"最高评分是：{highest_score}")
+
+
+
+# # lowest_response_time：目前发现的最低响应时间
+# lowest_response_time = 10000
+
+# # request_number：当前请求编号
+# for request_number in range(1, 6):
+#     # current_response_time：当前请求的响应时间
+#     current_response_time = int(
+#         input(f"请输入第{request_number}次请求的响应时间：")
+#     )
+
+#     if current_response_time < lowest_response_time:
+#         lowest_response_time = current_response_time
+
+# print(f"最低响应时间：{lowest_response_time}毫秒")
+
+
+
+# highest_score:目前发现最高评分
+highest_score = 0
+
+# lowest_score:目前发现最低评分
+lowest_score = 1000
+
+# score_number:当前评分编号
+for score_number in range(1, 6):
+
+    # current_score:当前输入评分
+    current_score = int(
+        input(f"第{score_number}次评分为:")
+    )
+
+    if current_score > highest_score:
+        highest_score = current_score
+
+    if current_score < lowest_score:
+        lowest_score = current_score
+
+print(f"最高分为{highest_score}")
+print(f"最低分为{lowest_score}")

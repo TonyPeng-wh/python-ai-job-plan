@@ -1,0 +1,23 @@
+"""
+独立练习：模型响应时间检查
+要求：
+
+输入模型回答耗时。
+最大允许耗时为 3.0 秒。
+当回答耗时小于或等于 3.0 秒时，输出：
+响应速度合格。
+
+无论是否合格，最后都输出：
+响应时间检查结束。
+"""
+
+#   response_time模型回答时间
+response_time = float(input("请输入模型回答耗时："))
+
+#   max_response_time最大允许耗时
+max_response_time = 3.0
+
+if response_time <= max_response_time:
+    print("响应速度合格")
+
+print("响应时间检查结束")

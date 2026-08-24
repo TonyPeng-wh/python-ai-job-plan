@@ -1,0 +1,12 @@
+"""
+将字符串中的指定内容替换为新内容。
+新字符串 = 原字符串.replace("旧内容", "新内容")
+"""
+# original_contract_id：用户输入的原始合同编号
+original_contract_id = input("请输入合同编号：")
+
+# normalized_contract_id：替换分隔符后的合同编号
+normalized_contract_id = original_contract_id.replace("-", "/")
+
+print(f"原始合同编号：{original_contract_id}")
+print(f"标准化合同编号：{normalized_contract_id}")

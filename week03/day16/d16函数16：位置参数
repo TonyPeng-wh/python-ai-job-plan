@@ -1,0 +1,9 @@
+"""
+d16函数16：位置参数
+
+"""
+def show_result(document_title, retrieval_score):
+    print(document_title)
+    print(retrieval_score)
+
+show_result("动力电池故障手册", 0.91) # 位置参数

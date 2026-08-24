@@ -1,0 +1,78 @@
+"""
+独立完成一个“模型服务检查程序”。
+answer_quality_score
+token_count
+api_status
+
+判断标准：
+
+回答质量分数大于或等于 0.8
+Token 数量小于 3000
+API 状态等于 "ok"
+API 状态不等于 "ok"
+
+回答质量是否合格：True
+Token 数量是否合格：True
+API 是否正常：True
+API 是否异常：False
+
+提交代码前自行检查：
+
+数值输入是否分别转换成 float 和 int
+正式变量名是否使用英文蛇形命名法
+是否正确区分 = 和 ==
+“大于或等于”是否使用 >=
+“小于”是否使用 <
+程序输出的是否是 True 或 False
+能否解释边界值为什么可能判定为合格
+"""
+
+answer_quality_score = float(input("请输入回答质量分数："))
+
+token_count = int(input("请输入token数量:"))
+
+api_status = input("请输入API状态:")
+
+answer_quality_score_meets_standard = answer_quality_score >= 0.8
+
+token_count_meets_standard = token_count < 3000
+
+api_status_meets_normal = api_status == "ok"
+
+api_status_meets_abnormal = api_status != "ok"
+
+print(f"回答质量是否合格:{answer_quality_score_meets_standard}")
+print(f"Token数量是否合格:{token_count_meets_standard}")
+print(f"API是否正常：{api_status_meets_normal}")
+print(f"API是否异常:{api_status_meets_abnormal}")
+
+
+"""
+# answer_quality_score：回答质量分数
+answer_quality_score = float(input("请输入回答质量分数："))
+
+# token_count：Token 数量
+token_count = int(input("请输入 Token 数量："))
+
+# api_status：API 状态
+api_status = input("请输入 API 状态：")
+
+
+# answer_quality_score_meets_standard：回答质量分数是否达到标准
+answer_quality_score_meets_standard = answer_quality_score >= 0.8
+
+# token_count_meets_standard：Token 数量是否达到标准
+token_count_meets_standard = token_count < 3000
+
+# api_status_is_normal：API 状态是否正常
+api_status_is_normal = api_status == "ok"
+
+# api_status_is_abnormal：API 状态是否异常
+api_status_is_abnormal = api_status != "ok"
+
+
+print(f"回答质量是否合格：{answer_quality_score_meets_standard}")
+print(f"Token 数量是否合格：{token_count_meets_standard}")
+print(f"API 是否正常：{api_status_is_normal}")
+print(f"API 是否异常：{api_status_is_abnormal}")
+"""

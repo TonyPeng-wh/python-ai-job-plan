@@ -1,0 +1,23 @@
+"""
+a = 10
+b = 3
+
+print(a + b)   # 加法：13
+print(a - b)   # 减法：7
+print(a * b)   # 乘法：30
+print(a / b)   # 普通除法：3.333...
+print(a // b)  # 整除：3
+print(a % b)   # 取余：1
+print(a ** b)  # 幂运算：1000
+"""
+
+weekly_hours = 29
+days = 7
+
+daily_hours = weekly_hours / days
+whole_hours = weekly_hours // days
+remaining_hours = weekly_hours % days
+
+print(f"平均每天学习{daily_hours.1f}小时。")
+print(f"每天先安排{whole_hours}小时。")
+print(f"分配后剩余{remaining_hours}小时。")

@@ -1,0 +1,4 @@
+#   answer_quality_scores:多个回答质量分数
+answer_quality_scores = [0.86, 0.92, 0.78, 0.95]
+print(answer_quality_scores)
+print(type(answer_quality_scores))

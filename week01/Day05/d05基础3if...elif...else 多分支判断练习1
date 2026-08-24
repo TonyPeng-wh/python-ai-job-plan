@@ -1,0 +1,15 @@
+#   if...elif...else 独立练习。
+
+#   battery_temperature电池温度
+battery_temperature = float(input("请输入电池温度："))
+
+if battery_temperature >= 60:
+    print("严重高温")
+elif battery_temperature >= 50:
+    print("高温告警")
+elif battery_temperature >= 40:
+    print("温度偏高")
+else:    
+    print("温度正常")
+
+print("电池温度检查结束")

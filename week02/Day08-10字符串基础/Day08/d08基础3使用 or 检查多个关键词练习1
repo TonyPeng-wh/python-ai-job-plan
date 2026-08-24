@@ -1,0 +1,15 @@
+# fault_description:请输入故障描述
+fault_description = input("请输入故障描述：")
+
+# braking_keyword_is_found:制动故障关键词是否发现
+braking_keyword_is_found = (
+    "刹车" in fault_description
+    or "制动" in fault_description
+)
+
+print(f"是否发现制动故障关键词：{braking_keyword_is_found}")
+
+if braking_keyword_is_found:
+    print("可能属于制动系统故障")
+else:
+    print("未发现制动故障关键词")

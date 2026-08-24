@@ -1,0 +1,40 @@
+"""
+独立练习：识别电池故障关键词
+
+用户输入一段新能源汽车故障描述。
+
+要求检查是否包含：
+
+电池
+
+使用变量：
+
+fault_description
+battery_keyword_is_found
+
+判断规则：
+
+包含“电池”：输出 可能属于电池故障
+不包含“电池”：输出 未发现电池故障关键词
+
+同时输出：
+
+是否包含电池关键词：True
+
+或：
+
+是否包含电池关键词：False
+"""
+
+#   fault_description:用户输入汽车故障描述
+fault_description = input("请输入工单描述：")
+
+#   battery_keyword_is_found:关键词是否包含电池
+battery_keyword_is_found = "电池" in fault_description
+
+print(f"是否包含电池关键词：{battery_keyword_is_found}")
+
+if battery_keyword_is_found:
+    print("可能属于电池故障")
+else:
+    print("未发现电池故障关键词")

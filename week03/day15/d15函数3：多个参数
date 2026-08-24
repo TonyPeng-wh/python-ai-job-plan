@@ -1,0 +1,36 @@
+"""
+目标:一个函数如何同时接收多个数据。
+"""
+def show_retrieval_result(document_title, retrieval_score):
+    print(f"文档名称：{document_title}")
+    print(f"检索分数：{retrieval_score}")
+# 这里有两个参数：document_title,retrieval_score
+"""
+def 函数名(参数1, 参数2):
+    函数内部代码
+"""
+# 3. 调用函数
+show_retrieval_result("动力电池故障手册", 0.92)
+"""
+这一轮你可以暂时理解成：
+document_title = "动力电池故障手册"
+retrieval_score = 0.92
+"""
+
+"""
+参数的顺序非常重要
+def show_retrieval_result(document_title, retrieval_score):
+第一个 → document_title
+第二个 → retrieval_score
+
+如果写反：
+Python 不一定马上报错，但数据会变成：
+document_title = 0.85
+retrieval_score = "高压系统安全规范"
+变量的数据类型和业务含义都要检查
+"""
+#5. 也可以传变量
+# current_title = "电机故障诊断手册"
+# current_score = 0.88
+
+# show_retrieval_result(current_title, current_score)

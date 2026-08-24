@@ -1,0 +1,15 @@
+"""
+使用 .upper() 将英文字母转换为大写
+
+基本语法
+大写字符串 = 原字符串.upper()
+"""
+
+# original_device_id：用户输入的原始设备编号
+original_device_id = input("请输入设备编号：")
+
+# normalized_device_id：统一转换为大写后的设备编号
+normalized_device_id = original_device_id.upper()
+
+print(f"原始设备编号：{original_device_id}")
+print(f"标准化设备编号：{normalized_device_id}")

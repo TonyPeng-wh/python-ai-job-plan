@@ -1,0 +1,11 @@
+"""
+函数⑨：参数接收 list
+函数也可以接收整个列表。
+"""
+# 例如有一组 RAG 检索分数：
+retrieval_scores = [0.91, 0.68, 0.85]
+def show_scores(scores):     ####
+    for current_score in scores:
+        print(current_score)
+
+show_scores(retrieval_scores) # 这一句相当于：scores = retrieval_scores

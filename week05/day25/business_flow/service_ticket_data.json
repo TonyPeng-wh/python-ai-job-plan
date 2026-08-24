@@ -1,0 +1,20 @@
+[
+    {
+        "ticket_id": "T001",
+        "fault_type": "充电故障",
+        "priority": "HIGH",
+        "processed": false
+    },
+    {
+        "ticket_id": "T002",
+        "fault_type": "中控故障",
+        "priority": "LOW",
+        "processed": true
+    },
+    {
+        "ticket_id": "T003",
+        "fault_type": "动力故障",
+        "priority": "HIGH",
+        "processed": false
+    }
+]

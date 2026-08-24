@@ -1,0 +1,42 @@
+#   学会在不重新创建整个列表的情况下，给列表增加一个新元素。
+#   1.append() 向列表末尾添加元素
+#   基本语法：列表变量.append(要添加的元素)
+# model_scores = [0.81, 0.88, 0.90, 0.92]
+
+# model_scores.append(0.87)
+
+# print(model_scores)
+
+
+retrieval_scores = [0.82, 0.91, 0.76]
+
+current_score = 0.88
+
+retrieval_scores.append(current_score)# append() 会直接修改原列表，执行后，retrieval_scores 自己就发生了变化。
+
+print(retrieval_scores)
+#所以现在不要写成：retrieval_scores = retrieval_scores.append(0.88)
+
+
+# 2. insert()：指定位置添加一个元素
+# 语法：列表.insert(索引, 元素)
+model_queue = ["qwen", "gpt"]
+model_queue.insert(1, "deepseek")#第一个元素位置为0
+print(model_queue)
+
+
+
+# 3. extend()：一次添加多个元素
+# 语法：列表.extend(另一个列表)
+model_names = ["qwen", "deepseek"]
+model_names.extend(["gpt", "glm"])
+print(model_names)
+
+
+
+# 4. append() 和 extend() 是最容易混淆的
+# append()   意思：添加 1 个元素在末尾
+# extend()   意思：把另外一个列表里的多个元素依次添加进来
+# 所以最简单的记忆方式是：
+# append → 添加一个
+# extend → 扩展多个,一次添加多个已有元素时，用 extend()

@@ -1,0 +1,30 @@
+"""
+而且刚才的问题不是 Python 语法，而是业务字段判断错了。这类错误以后做工单分类、反馈统计、RAG 评估时很常见，所以要养成一个习惯：
+
+先确认“我要判断哪个字段”，再写 current_feedback["key"]。
+
+继续下一题，还是写代码，不做预测题。
+
+这次写一个函数：
+函数名：count_unprocessed_feedback
+参数：feedbacks
+功能：统计 processed == False 的反馈数量
+返回：未处理数量
+最后输出：未处理反馈数量：2
+"""
+def count_unprocessed_feedback(feedbacks):
+    count_unprocessed = 0
+    for current_feedback in feedbacks:
+        if current_feedback["processed"] == False:
+            count_unprocessed = count_unprocessed + 1
+    return count_unprocessed
+
+feedback_list = [
+    {"category": "回答错误", "processed": False},
+    {"category": "检索失败", "processed": True},
+    {"category": "回答错误", "processed": False},
+    {"category": "格式问题", "processed": True}
+]
+
+result = count_unprocessed_feedback(feedback_list)
+print(f"未处理反馈数量：{result}")

@@ -1,0 +1,20 @@
+[
+    {
+        "feedback_id": "F001",
+        "category": "回答错误",
+        "processed": false,
+        "priority": "HIGH"
+    },
+    {
+        "feedback_id": "F002",
+        "category": "格式问题",
+        "processed": true,
+        "priority": "LOW"
+    },
+    {
+        "feedback_id": "F003",
+        "category": "检索失败",
+        "processed": false,
+        "priority": "HIGH"
+    }
+]

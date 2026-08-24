@@ -1,0 +1,51 @@
+"""
+RAG 检索记录编号校验
+这次不学习新语法，重点练习：
+输入 → 清理 → 检查长度 → 提取内容 → 判断格式 → 输出结果
+
+"""
+
+#   raw_record_code:原始记录编号
+raw_record_code = input("请输入原始记录编号:")
+
+#   record_code:标准化后的记录编号
+record_code = (raw_record_code
+    .strip()
+    .upper()
+)
+
+print(f"标准化后的记录编号为{record_code}")
+
+#   record_code_is_complete:记录编号长度是否完整
+record_code_is_complete = len(record_code) == 15
+print(f"标准化后的长度是否等于15:{record_code_is_complete}")
+
+if record_code_is_complete:
+    #   record_year:记录年份
+    record_year = record_code[4:8]
+    #   record_number:检索序号
+    record_number = record_code[9:12]
+        #   record_status:检索状态
+    record_status = record_code[13:15]
+    #   record_format_is_valid:记录编号格式是否正确
+    record_format_is_valid = (
+        record_code.startswith("RAG-")
+        and record_year.isdigit()
+        and record_code[8] == "-"
+        and record_number.isdigit()
+        and record_code[12] == "-"
+        and (record_status == "OK" or record_status == "NG")
+    )
+    if record_format_is_valid:
+        print(f"记录年份为{record_year}")
+        print(f"检索序号为{record_number}")
+        print(f"检索状态为：{record_status}")
+        if record_status == "OK":
+            print("本次检索成功")
+        else:
+             print("本次检索失败，需要检查检索日志")
+    else:
+        print("记录编号格式错误")
+else:
+    print("记录编号长度错误")
+

@@ -1,0 +1,40 @@
+"""
+完成一个“RAG 结果复查程序”。
+retrieval_score
+answer_quality_score
+判断标准：
+
+检索分数小于 0.75，说明检索质量偏低
+回答质量分数小于 0.8，说明回答质量偏低
+只要任意一项偏低，就需要人工复查
+
+建议变量名：
+retrieval_score_is_low：检索分数是否偏低
+answer_quality_score_is_low：回答质量分数是否偏低
+manual_review_is_needed：是否需要人工复查
+
+输出格式：
+检索分数是否偏低：False
+回答质量分数是否偏低：True
+是否需要人工复查：True
+"""
+#   retrieval_score检索分数
+retrieval_score = float(input("请输入检索分数："))
+
+#   answer_quality_score回答质量分数
+answer_quality_score = float(input("请输入回答质量分数："))
+
+#   retrieval_score_is_low：检索分数是否偏低
+retrieval_score_is_low = retrieval_score < 0.75
+
+#   answer_quality_score_is_low：回答质量分数是否偏低
+answer_quality_score_is_low = answer_quality_score < 0.8
+
+#   manual_review_is_needed：是否需要人工复查
+manual_review_is_needed = (
+    retrieval_score_is_low or answer_quality_score_is_low
+)
+
+print(f"检索分数是否偏低:{answer_quality_score_is_low}")
+print(f"回答质量分数是否偏低:{answer_quality_score_is_low}")
+print(f"是否需要人工复查:{manual_review_is_needed}")

@@ -1,0 +1,32 @@
+"""
+独立练习：工单描述长度检查
+
+要求用户输入一段工单描述，并使用：
+
+ticket_description
+description_length
+
+判断规则：
+
+长度等于0：输出“工单描述不能为空”
+长度小于10：输出“工单描述过短”
+其他情况：输出“工单描述长度合格”
+
+同时输出：
+
+工单描述字符数量：具体数量
+"""
+
+# ticket_description：用户输入工单描述
+ticket_description = input("请输入描述内容：")
+
+# description_length:描述长度
+description_length = len(ticket_description)
+print(f"问题字符数量：{description_length}")
+
+if description_length == 0:
+    print("工单描述不能为空")
+elif description_length < 10:
+    print("工单描述过短")
+else:
+    print("工单描述长度合格")

@@ -1,0 +1,113 @@
+#   字符串综合练习 3：AI 客服工单编号 + 内容联合校验
+"""
+一、工作场景
+
+AI 客服系统收到一条故障工单，需要同时处理：
+
+工单编号
++
+故障描述
+
+例如：
+
+工单编号：TKT-2026-027-HIGH
+
+故障描述：
+API KEY invalid, request timeout, retry timeout
+
+程序需要完成两件事：
+
+第一部分：检查工单编号是否合法
+第二部分：分析故障描述
+
+而且必须满足：
+
+只有工单编号合法，才继续分析故障描述。
+
+这正好巩固你刚才问的“第一层、第二层、第三层 if”关系。
+"""
+
+#   raw_ticket_code:原始工单编号
+raw_ticket_code = input("请输入原始工单编号：")
+
+#   ticket_code:标准化后的工单编号
+ticket_code = (raw_ticket_code
+               .strip()
+               .upper()
+)
+
+#   ticket_code_is_complete:长度是否正确
+ticket_code_is_complete = len(ticket_code) == 17
+
+print(f"工单长度是否等于17？：{ticket_code_is_complete}")
+
+if ticket_code_is_complete:
+    #   ticket_year:工单年份
+    ticket_year = ticket_code[4:8]
+    #   ticket_number:工单序号
+    ticket_number = ticket_code[9:12]
+    #   ticket_priority:工单优先级
+    ticket_priority = ticket_code[13:17]
+    #   ticket_code_is_valid:编号格式是否正确
+    ticket_code_is_valid = (
+        ticket_code.startswith("TKT-")
+        and ticket_year.isdigit()
+        and ticket_code[8] == "-"
+        and ticket_number.isdigit()
+        and ticket_code[12] == "-"
+        and (ticket_priority == "HIGH" or ticket_priority == "LOW")
+    )
+    if ticket_code_is_valid:
+        #   raw_issue_text:原始故障描述
+        raw_issue_text = input("请输入故障描述：")
+        #   issue_text:标准化后的故障描述
+        issue_text = (
+            raw_issue_text
+            .strip()
+            .lower()
+        )
+        #   issue_text_is_empty:故障描述是否为空
+        issue_text_is_empty = len(issue_text) == 0 
+        print(f"故障描述是否为空？：{issue_text_is_empty}")
+
+        if issue_text_is_empty:
+            print("故障描述不能为空")
+        else:
+            #   auth_error_exist:鉴权故障
+            auth_error_exist = (
+                "api key" in issue_text
+                or "unauthorized" in issue_text
+            )
+            #   timeout_error_exists:超时故障
+            timeout_error_exists = "timeout" in issue_text
+            #   network_error_exists:网络故障
+            network_error_exists = "network" in issue_text
+            #   ticket_category:工单类型
+            if auth_error_exist:
+                ticket_category = "鉴权故障"
+            elif timeout_error_exists:
+                ticket_category = "超时故障"
+            elif network_error_exists:
+                ticket_category = "网络故障"
+            else:
+                ticket_category = "其他故障"
+            #   timeout_count:超时次数
+            timeout_count = issue_text.count("timeout")
+            #   api_key_position:api位置
+            api_key_position = issue_text.find("api key")
+            #   api_key_exists:api key是否存在
+            api_key_exists = api_key_position != -1
+            #   masked_issue_text:敏感信息
+            masked_issue_text = issue_text.replace("api key", "[masked]")
+    else:
+        print("编号格式错误")
+else:
+    print("编号长度错误")
+
+print(f"工单年份：{ticket_year}")
+print(f"工单序号：{ticket_number}")
+print(f"工单优先级：{ticket_priority}")
+print(f"故障类别：{ticket_category}")
+print(f"超时次数：{timeout_count}")
+print(f"是否存在API KEY敏感词：{api_key_exists}")
+print(f"脱敏后的故障描述：{masked_issue_text}")

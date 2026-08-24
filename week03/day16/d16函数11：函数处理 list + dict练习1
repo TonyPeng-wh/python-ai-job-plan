@@ -1,0 +1,39 @@
+
+def count_unprocessed_feedback(feedbacks):
+    unprocessed_count = 0
+
+    for current_feedback in feedbacks:
+        if current_feedback["processed"] == False:
+            unprocessed_count = unprocessed_count + 1
+
+    return unprocessed_count
+
+
+feedback_list = [
+    {
+        "category": "回答错误",
+        "processed": False
+    },
+    {
+        "category": "检索失败",
+        "processed": True
+    },
+    {
+        "category": "格式问题",
+        "processed": False
+    }
+]
+
+result = count_unprocessed_feedback(feedback_list)
+
+print(f"未处理反馈数量：{result}")
+
+
+"""
+① current_feedback 每一轮是什么数据类型？
+dict
+② result 最终是多少？
+2
+③ 完整输出是什么？
+未处理反馈数量：2
+"""

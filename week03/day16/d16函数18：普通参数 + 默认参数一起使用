@@ -1,0 +1,18 @@
+"""
+d16函数18：普通参数 + 默认参数一起使用
+这一节只学：
+有些参数必须传，有些参数可以有默认值。
+"""
+def show_ticket(ticket_code, priority="MEDIUM"):
+    print(f"工单编号：{ticket_code}")
+    print(f"优先级：{priority}")
+
+show_ticket("TK1008")
+"""
+没有默认值的参数
+→ 必须传
+
+有默认值的参数
+→ 可以不传
+→ 不传就用默认值
+"""

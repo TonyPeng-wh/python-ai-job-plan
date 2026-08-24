@@ -1,0 +1,30 @@
+"""
+1.怎么把外面的数据传进函数。
+2. 参数的基本写法:
+def show_retrieval_score(retrieval_score):
+    print(f"检索分数：{retrieval_score}")
+
+retrieval_score就是这个函数的参数。
+可以先理解成：函数提前准备的一个变量，用来接收调用时传进来的数据。
+3. 怎么把数据传进去？
+"""
+def show_retrieval_score(retrieval_score):
+    print(f"检索分数：{retrieval_score}")
+show_retrieval_score(0.92) # show_retrieval_score(0.92)也可以写成（也可以传变量）show_retrieval_score = 0.92
+show_retrieval_score(0.68)
+
+def show_ticket_category(ticket_category):
+    print(f"工单分类：{ticket_category}")
+show_ticket_category("电池故障")
+show_ticket_category("充电故障")
+
+"""
+参数和传入的数据要区分
+def show_retrieval_score(retrieval_score):
+retrieval_score叫参数。调用：show_retrieval_score(0.92)是实际传进去的数据。
+
+定义函数时括号里的变量
+→ 用来接数据
+调用函数时括号里的值
+→ 真正传进去的数据
+"""

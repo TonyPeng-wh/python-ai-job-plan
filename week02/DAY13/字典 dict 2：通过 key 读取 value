@@ -1,0 +1,33 @@
+# 通过 key 读取 value
+"""
+1. 基本语法:
+model_result = {
+    "model_name": "deepseek",
+    "quality_score": 0.92,
+    "request_succeeded": True
+}
+model_name = model_result["model_name"]
+print(model_name)
+输出：deepseek
+
+基本格式：字典变量["key"]
+
+2.
+list → 用位置找数据
+dict → 用 key 找数据
+
+3. 读取后的类型由 value 决定
+
+"""
+
+ticket_info = {
+    "ticket_id": "TKT-001",
+    "category": "超时故障",
+    "priority": "HIGH"
+}
+ticket_id = ticket_info["ticket_id"]
+ticket_category = ticket_info["category"]
+ticket_priority = ticket_info["priority"]
+print(f"工单编号：{ticket_id}")
+print(f"工单类别：{ticket_category}")
+print(f"工单优先级：{ticket_priority}")

@@ -1,0 +1,75 @@
+"""
+函数⑥：局部变量
+目标
+这一节只理解：
+函数里面创建的变量，通常只能在这个函数里面使用。
+"""
+def check_retrieval_score(retrieval_score):
+    retrieval_status = "qualified"
+    print(retrieval_status) ###
+
+check_retrieval_score(0.92)
+
+
+# def check_retrieval_score(retrieval_score):
+#     retrieval_status = "qualified"
+
+
+# check_retrieval_score(0.92)
+
+# print(retrieval_status) ###原因是：retrieval_status是在函数内部创建的。它的有效范围主要在：def check_retrieval_score(...):这个函数里面。
+"""
+函数外面不能直接使用它。
+这种变量叫：局部变量
+你现在不用死记术语，理解“只能在函数内部使用”更重要。
+"""
+
+
+#3. 为什么这样设计？
+#假设以后一个项目里有很多函数：
+"""
+def check_retrieval():
+    status = "qualified"
+
+def check_answer():
+    status = "需要复核"
+两个函数里面都用了：status
+但它们不会互相影响。
+因为可以理解成：
+check_retrieval 函数里的 status
+→ 属于这个函数
+
+check_answer 函数里的 status
+→ 属于另一个函数
+这让不同函数可以安心使用自己的临时变量。
+"""
+
+# 4. 那函数里面的结果怎么拿出来？这就和昨天的 return 接上了。
+# 不要
+# def check_retrieval_score(retrieval_score):
+#     retrieval_status = "qualified"
+
+
+# check_retrieval_score(0.92)
+
+# print(retrieval_status)
+
+# 而应该：
+def check_retrieval_score(retrieval_score):
+    retrieval_status = "qualified"
+    return retrieval_status             # 函数内部算出结果，return 把结果带出去。
+
+
+result = check_retrieval_score(0.92)    # 这里的 0.92 实际上根本没有被使用。
+
+print(result)
+#   一个参数传进函数，不代表它一定被使用。要看函数内部有没有真正用到这个参数。
+
+"""
+5. 参数也属于函数内部
+"""
+def show_ticket(ticket_code):   # 定义函数
+    print(ticket_code)           # 函数里面
+
+
+show_ticket("TK1008")           # 函数外面，调用函数

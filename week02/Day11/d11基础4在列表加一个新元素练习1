@@ -1,0 +1,7 @@
+#   综合练习：列表添加元素
+supported_models = ["qwen", "deepseek"]
+supported_models.append("gpt")
+supported_models.insert(1, "glm")
+new_models = ["llama", "mistral"]
+supported_models.extend(new_models)
+print(supported_models)

@@ -1,0 +1,47 @@
+#   image_is_valid图片是否有效
+#   defect_confidence缺陷置信度
+
+image_is_valid = int(input("请输入图片是否有效："))
+
+if image_is_valid == 1:
+    defect_confidence = float(input("请输入缺陷置信度"))
+
+    if defect_confidence >= 0.90:
+        print("确定存在缺陷，创建质检告警")
+    elif defect_confidence >= 0.60:
+        print("结果不确定，转人工复核")
+    else:
+        print("未发现明显缺陷")
+else:
+    print("图片无效，请重新采集")
+
+print("视觉质检结束")
+
+"""
+Day05 综合练习：生产线视觉质检。
+
+目标
+
+综合使用：
+
+外层 if...else
+内层 if...elif...else
+int(input())
+float(input())
+业务规则
+
+先检查图片是否有效：
+
+image_is_valid == 0：输出 图片无效，请重新采集
+image_is_valid == 1：再输入缺陷置信度
+
+图片有效时：
+
+defect_confidence >= 0.90：确认存在缺陷，创建质检告警
+defect_confidence >= 0.60：结果不确定，转人工复核
+其他情况：未发现明显缺陷
+
+最后始终输出：
+
+视觉质检结束
+"""

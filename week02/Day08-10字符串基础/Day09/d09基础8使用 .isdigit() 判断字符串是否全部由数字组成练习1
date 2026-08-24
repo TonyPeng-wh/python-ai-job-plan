@@ -1,0 +1,12 @@
+#   tracking_code:快递单号
+tracking_code = input("请输入快递单号：").strip()
+
+#   tracking_code_is_numeric:快递单号是否只包含数字
+tracking_code_is_numeric = tracking_code.isdigit()
+
+print(f"快递单号是否只包含数字：{tracking_code_is_numeric}")
+
+if tracking_code_is_numeric:
+    print("快递单号格式正确")
+else:
+    print("快递单号只能包含数字")

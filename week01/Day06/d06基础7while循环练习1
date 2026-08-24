@@ -1,0 +1,33 @@
+"""
+独立练习：处理待发送通知
+
+系统中有若干条通知等待发送，每发送一条，待发送数量减少一条。
+
+变量含义
+pending_notification_count
+含义：当前待发送的通知数量
+类型：int
+来源：用户输入
+作用：作为 while 循环条件，每轮减少 1
+sent_notification_count
+含义：已经发送的通知数量
+类型：int
+初始值：0
+作用：每成功模拟发送一条，就增加 1
+"""
+
+#   pending_notification_count:当前待发送的通知数量
+pending_notification_count = int(input("请输入当前待发送的通知数量："))
+
+#   sent_notification_count:已经发送的通知数量
+sent_notification_count = 0
+
+while pending_notification_count > 0:
+    sent_notification_count = sent_notification_count + 1
+
+    print(f"正在发送第{sent_notification_count}条通知")
+
+    pending_notification_count = pending_notification_count - 1
+    print(f"剩余待发送的通知：{pending_notification_count}条")
+
+print("全部通知发送完成")

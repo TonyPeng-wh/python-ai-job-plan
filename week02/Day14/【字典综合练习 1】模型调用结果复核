@@ -1,0 +1,52 @@
+# 【字典综合练习 1】模型调用结果复核
+
+model_result = {
+    "request_id": "REQ-2026-001",
+    "model_name": "deepseek",
+    "quality_score": 0.76,
+    "request_succeeded": True,
+    "retry_count": 1
+}
+# model_result_count:记录字段数量
+model_result_count = len(model_result)
+print(f"记录字段数量：{model_result_count}")
+
+# 2. 读取几个关键字段:用 key 去读取它对应的 value。
+request_id = model_result["request_id"]
+model_name = model_result["model_name"]
+quality_score = model_result["quality_score"]
+print(f"请求编号：{request_id}")
+print(f"模型名称：{model_name}")
+print(f"回答质量评分：{quality_score}")
+
+# 3. 判断是否包含错误信息
+# error_message_exists:错误信息字段是否存在
+error_message_exists = "error_message" in model_result
+if error_message_exists:
+    print("存在错误信息")
+else:
+    print("本次调用没有错误信息")
+
+# 4. 读取可能不存在的响应时间
+# response_time:响应时间
+response_time = model_result.get("response_time", 0)
+print(f"响应时间：{response_time}")
+
+# 5. 人工复核评分
+model_result["quality_score"] = 0.88
+
+# 6. 增加质检结果
+model_result["review_status"] = "passed"
+model_result["reviewer"] = "manual"
+
+# 7. 删除重试次数
+# retry_count_exists:重试次数是否存在
+retry_count_exists = "retry_count" in model_result
+if retry_count_exists:
+    removed_retry_count = model_result.pop("retry_count")
+else:
+    print("key不存在")
+
+# 8. 输出最终所有字段
+for current_key, current_value in model_result.items():
+    print(f"{current_key}:{current_value}")

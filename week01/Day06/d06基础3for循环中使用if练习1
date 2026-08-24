@@ -1,0 +1,24 @@
+"""
+独立练习：批量检查文档解析
+连续检查编号为 1 到 3 的三份文档。
+每次询问：第1份文档是否解析成功？请输入1或0：
+规则：
+输入 1：输出 第1份文档解析成功
+输入 0：输出 第1份文档解析失败
+三份文档检查结束后，只输出一次 文档解析检查结束
+变量名使用：
+document_number
+parsing_is_successful
+"""
+# document_number：文档编号
+for document_number in range(1, 4):
+    # parsing_is_successful：文档是否解析成功
+    parsing_is_successful = int(
+        input(f"第{document_number}份文档是否解析成功？请输入1or0")
+        )
+    
+    if parsing_is_successful == 1:
+        print(f"第{document_number}份文档解析成功")
+    else:
+        print(f"第{document_number}份文档解析失败")
+print("文档解析检查结束")

@@ -1,0 +1,8 @@
+"""
+学习使用 for 循环，让一段代码按照指定次数重复执行。
+基本语法:
+for 循环变量 in range(开始值, 结束值):
+    重复执行的代码
+"""
+for ticket_number in range(1, 11):
+    print(f"正在检查第{ticket_number}条工单")

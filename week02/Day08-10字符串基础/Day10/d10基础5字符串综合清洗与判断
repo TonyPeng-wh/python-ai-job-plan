@@ -1,0 +1,56 @@
+"""
+字符串综合清洗与判断
+标准工作流程:
+接收原始文本
+→ 清除两端空白
+→ 统一大小写或符号
+→ 检查是否为空
+→ 检查格式或关键词
+→ 提取需要的内容
+→ 输出处理结果
+
+
+"""
+
+# 综合例题：标准化模型任务编号
+# 编号规则：
+# RAG-2026-008
+# 要求：
+# 清除两端空白
+# 转成大写
+# 将 _ 替换为 -
+# 判断是否以 RAG- 开头
+# 提取年份
+# 判断年份是否全部为数字
+
+# original_task_code：用户输入的原始任务编号
+original_task_code = input("请输入模型任务编号：")
+
+# normalized_task_code：清理并标准化后的任务编号
+normalized_task_code = (
+    original_task_code
+    .strip()
+    .upper()
+    .replace("_", "-")
+)
+
+if len(normalized_task_code) >= 8:
+    # rag_prefix_is_found：是否以RAG-开头
+    rag_prefix_is_found = normalized_task_code.startswith("RAG-")
+
+    # task_year：从编号中提取的年份
+    task_year = normalized_task_code[4:8]
+
+    # task_year_is_numeric：年份是否全部由数字组成
+    task_year_is_numeric = task_year.isdigit()
+
+    print(f"标准化任务编号：{normalized_task_code}")
+    print(f"是否以RAG-开头：{rag_prefix_is_found}")
+    print(f"任务年份：{task_year}")
+
+    if rag_prefix_is_found and task_year_is_numeric:
+        print("模型任务编号格式初步正确")
+    else:
+        print("模型任务编号格式错误")
+else:
+    print("模型任务编号长度不足")

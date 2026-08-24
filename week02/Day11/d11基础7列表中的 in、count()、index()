@@ -1,0 +1,83 @@
+#   1. in：判断元素是否在列表里，语法：元素 in 列表
+model_names = ["qwen", "deepseek", "gpt"]
+
+model_exists = "gpt" in model_names
+
+print(model_exists)
+
+
+#   2. count()：统计某个元素出现几次
+ticket_categories = ["超时故障", "鉴权故障", "超时故障", "网络故障"]
+
+timeout_count = ticket_categories.count("超时故障")
+
+print(timeout_count)
+
+
+#   3. index()：查找元素第一次出现的索引
+model_names2 = ["qwen", "deepseek", "gpt", "glm"]
+
+model_index = model_names2.index("gpt")
+
+print(model_index)
+
+
+#   4. count() 和 index() 的区别
+# in
+# → 有没有
+# → bool
+
+# count()
+# → 有几个
+# → int
+
+# index()
+# → 第一次在哪个索引
+# → int
+
+
+#   5. index() 有一个重要风险
+# 这个和你之前字符串的 .find() 不一样。
+#   text.find("api key")如果找不到，会返回：-1
+#   model_names.index("llama")如果 "llama" 不在列表中，不会返回 -1，而是直接报错。
+
+
+# model_names = ["qwen", "deepseek", "gpt"]
+# model_index = model_names.index("llama")
+# ValueError: list.index(x): x not in list
+
+# 你现在还没学异常处理，所以目前最安全的写法是：
+model_names = ["qwen", "deepseek", "gpt"]
+
+model_exists = "llama" in model_names
+
+if model_exists:
+    model_index = model_names.index("llama")
+    print(model_index)
+else:
+    print("模型不存在")
+
+# 执行顺序：(先满足前置条件，再执行可能出错的操作。)
+# 先用 in 判断有没有
+# ↓
+# 有 → 再使用 index()
+# ↓
+# 没有 → 不执行 index()
+
+
+#一个完整工作场景
+supported_models = ["qwen", "deepseek", "gpt", "qwen"]
+
+target_model = "gpt"
+
+model_exists = target_model in supported_models
+model_count = supported_models.count(target_model)
+
+if model_exists:
+    first_model_index = supported_models.index(target_model)
+
+    print(f"模型是否存在：{model_exists}")
+    print(f"模型出现次数：{model_count}")
+    print(f"第一次出现的索引：{first_model_index}")
+else:
+    print("目标模型不存在")

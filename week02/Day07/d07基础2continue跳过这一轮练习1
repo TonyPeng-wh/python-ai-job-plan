@@ -1,0 +1,41 @@
+"""
+独立练习：跳过空文档
+
+系统检查 5 份知识库文档。
+
+使用文档字数模拟检查结果：
+
+输入 0：当前文档为空，跳过
+输入大于 0：文档有效，累计字数并增加有效文档数量
+"""
+
+#total_word_count 累计有效文档总字数
+total_word_count = 0
+
+#valid_document_count 累计有效文档数量
+valid_document_count = 0
+
+#document_number 当前文档编号
+for document_number in range(1, 6):
+
+    #current_word_count 当前文档字数
+    current_word_count = int(
+        input(f"第{document_number}份文档字数为：")
+    )
+
+    if current_word_count == 0:
+        print(f"第{document_number}份文档为空，跳过")
+        continue
+
+    total_word_count = total_word_count + current_word_count
+    valid_document_count = valid_document_count + 1
+    print(f"第{document_number}份文档已记录")
+
+print(f"有效文档总字数为{total_word_count}")
+print(f"有效文档数为{valid_document_count}")
+
+if valid_document_count > 0:
+    average_word_count = total_word_count / valid_document_count
+    print(f"有效文档平均字数：{average_word_count:.1f}")
+else:
+    print("没有有效文档，无法计算平均字数")

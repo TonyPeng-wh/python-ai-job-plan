@@ -1,0 +1,38 @@
+"""
+d16函数12：函数返回 bool
+这在 AI 应用程序里非常常见。
+比如判断检索分数是否合格：
+"""
+def retrieval_is_qualified(retrieval_score):
+    if retrieval_score >= 0.75:
+        return True
+    else:
+        return False
+
+is_qualified = retrieval_is_qualified(0.82)
+print(is_qualified)
+
+if is_qualified:
+    print("进入回答生成阶段")
+else:
+    print("重新检索")
+
+"""
+为什么返回 bool 很有用？
+因为后面的代码经常需要继续做判断：
+函数负责检查
+↓
+返回 True / False
+↓
+其他代码根据结果决定下一步
+"""
+def ticket_needs_review(priority):
+    if priority == "HIGH":
+        return True
+    else:
+        return False
+
+needs_review = ticket_needs_review("HIGH")
+
+if needs_review:
+    print("提交人工复核")

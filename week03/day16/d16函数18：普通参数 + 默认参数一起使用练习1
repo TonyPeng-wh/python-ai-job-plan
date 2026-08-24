@@ -1,0 +1,16 @@
+def show_feedback(category, status="待处理"):
+    print(f"反馈类型：{category}")
+    print(f"处理状态：{status}")
+
+
+show_feedback("回答错误")
+show_feedback("检索失败", "已完成")
+print(show_feedback)
+"""
+① 第一次调用时，category 和 status 分别是什么？
+回答错误，待处理
+② 第二次调用时，category 和 status 分别是什么？
+检索失败，已完成
+③ 完整输出是什么？
+反馈类型：检索失败，处理状态：已完成
+"""

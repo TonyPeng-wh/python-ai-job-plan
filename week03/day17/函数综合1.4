@@ -1,0 +1,80 @@
+"""
+"""
+
+def count_high_priority(feedbacks):
+    count_priorities = 0
+    for current_feedback in feedbacks:
+        if current_feedback["priority"] == "HIGH":
+            count_priorities = count_priorities + 1
+    return count_priorities
+
+feedback_list = [
+    {"category": "回答错误", "priority": "HIGH"},
+    {"category": "检索失败", "priority": "LOW"},
+    {"category": "格式问题", "priority": "HIGH"},
+    {"category": "回答错误", "priority": "MEDIUM"},
+    {"category": "回答错误", "priority": "HIGH"}
+]
+
+high_priority_count = count_high_priority(feedback_list)
+print(f"HIGH优先级数量:{high_priority_count}")
+
+
+
+def count_pending_ticket(tickets):
+    count_status = 0
+    for current_ticket in tickets:
+        if current_ticket["status"] == "待处理":
+            count_status = count_status + 1
+    return count_status
+
+ticket_list = [
+    {"ticket_id": "T001", "status": "待处理"},
+    {"ticket_id": "T002", "status": "已完成"},
+    {"ticket_id": "T003", "status": "待处理"},
+    {"ticket_id": "T004", "status": "处理中"},
+    {"ticket_id": "T005", "status": "待处理"}
+]
+
+pending_ticket_count = count_pending_ticket(ticket_list)
+print(f"待处理的工单数量：{pending_ticket_count}")
+
+
+
+def count_low_score_retrievals(retrievals):
+    count_low_score = 0
+    for current_retrieval in retrievals:
+        if current_retrieval["score"] < 0.75:
+            count_low_score = count_low_score + 1
+    return count_low_score          # return 的结果，会回到“这个函数被调用的那个位置”。
+
+retrieval_list = [
+    {"query_id": "Q001", "score": 0.82},
+    {"query_id": "Q002", "score": 0.61},
+    {"query_id": "Q003", "score": 0.74},
+    {"query_id": "Q004", "score": 0.91},
+    {"query_id": "Q005", "score": 0.55}
+]
+# 变量 = 函数调用()，就是用这个变量保存函数 return 回来的结果。
+low_scores_count = count_low_score_retrievals(retrieval_list) ###
+print(f"低分检索数量：{low_scores_count}")
+
+
+
+def count_qualified_answer(answers):
+    count_answer = 0
+    for current_answer in answers:
+        if current_answer["qualified"] == True:
+            count_answer = count_answer + 1
+    return count_answer
+
+answer_list = [
+    {"answer_id": "A001", "qualified": True},
+    {"answer_id": "A002", "qualified": False},
+    {"answer_id": "A003", "qualified": True},
+    {"answer_id": "A004", "qualified": True},
+    {"answer_id": "A005", "qualified": False}
+]
+
+count_qualified = count_qualified_answer(answer_list)
+print(f"合格回答数量：{count_qualified}")

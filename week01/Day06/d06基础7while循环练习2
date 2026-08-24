@@ -1,0 +1,17 @@
+#   pending_fault_count:当前待处理的故障数量
+pending_fault_count = int(input("请输入待处理的故障数量："))
+
+#   processed_fault_count:已经处理的故障数量
+processed_fault_count = 0
+
+while pending_fault_count > 0:
+    processed_fault_count = processed_fault_count + 1
+
+    print(f"正在处理第{processed_fault_count}条故障记录")
+
+    pending_fault_count = pending_fault_count - 1
+    print(f"剩余待处理故障：{pending_fault_count}")
+
+print("全部故障记录处理完成")
+    
+

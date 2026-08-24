@@ -1,0 +1,53 @@
+#   企业知识库检索文档管理
+document_titles = [
+    "充电故障处理手册",
+    "动力电池维修指南",
+    "高压系统安全规范",
+    "充电故障处理手册"
+]
+
+# 当前检索结果数量
+document_count = len(document_titles)
+print(document_count)
+
+# “动力电池维修指南”是否存在
+battery_guide_exists = "动力电池维修指南" in document_titles
+print(battery_guide_exists)
+
+# “充电故障处理手册”出现次数
+charging_manual_count = document_titles.count("充电故障处理手册")
+print(charging_manual_count)
+
+# “高压系统安全规范”第一次出现的索引
+safety_guide_exists = "高压系统安全规范" in document_titles
+if safety_guide_exists:
+    safety_guide_index = document_titles.index("高压系统安全规范")
+    print(safety_guide_exists)
+else:
+    print("高压系统安全规范不存在")
+
+document_titles[0] = "充电系统故障诊断手册"
+
+# 新检索到的一篇文档
+new_document = "车载充电机故障案例"
+document_titles.append(new_document)
+
+# 又一次新增两篇
+new_documents = [
+    "高压互锁故障说明",
+    "绝缘故障排查指南"
+]
+document_titles.extend(new_documents)
+
+# 最后被删除的不相关文档
+removed_document = document_titles.pop()
+
+document_titles.sort()
+
+document_titles.reverse()
+
+for current_document_title in document_titles:
+    print(f"检索文档：{current_document_title}")
+
+document_text = " \n ".join(document_titles)
+print(document_text)

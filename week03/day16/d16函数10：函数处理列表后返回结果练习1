@@ -1,0 +1,22 @@
+"""
+回答：
+① result 最终是多少？
+3
+② 完整输出是什么？
+HIGH数量：3
+"""
+def count_high_priority(priorities):
+    high_count = 0
+
+    for current_priority in priorities:
+        if current_priority == "HIGH":
+            high_count = high_count + 1
+
+    return high_count
+
+
+priority_list = ["HIGH", "LOW", "HIGH", "MEDIUM", "HIGH"]
+
+result = count_high_priority(priority_list)
+
+print(f"HIGH数量：{result}")

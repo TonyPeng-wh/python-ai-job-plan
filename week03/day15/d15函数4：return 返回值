@@ -1,0 +1,82 @@
+"""
+return 返回值
+这一节只解决一个问题：函数处理完数据后，怎样把结果交回程序继续使用。
+重点区分：print()和return
+"""
+# print()
+# 假设我们写一个函数判断 RAG 检索分数是否合格：
+# def check_retrieval_score(retrieval_score):
+#     if retrieval_score >= 0.75:
+#         print("qualified")
+#     else:
+#         print("low_score")
+# check_retrieval_score(0.92)
+# 但这里有一个问题："qualified" 只是打印给我们看了，程序并没有拿到这个结果继续使用。
+
+# 2. return 是什么？
+def check_retrieval_score(retrieval_score):
+    if retrieval_score >= 0.75:
+        return "qualified"          # 可以先理解成：函数把 "qualified" 这个结果交回调用它的位置。
+    else:
+        return "low_score"
+# 3. 返回到哪里？
+result = check_retrieval_score(0.92)    # 返回为result = qualified
+print(result)
+
+"""
+0.92
+↓
+传给 retrieval_score
+
+retrieval_score = 0.92
+↓
+判断
+0.92 >= 0.75
+↓
+True
+
+return "qualified"
+↓
+把 "qualified" 返回出去
+"""
+
+# 4. print() 和 return 的核心区别
+# print("qualified")作用：把内容显示给人看。
+# return "qualified"作用：把结果交给程序继续使用。
+
+# 5. 一个真实一点的工作流程
+def check_retrieval_score(retrieval_score):
+    if retrieval_score >= 0.75:
+        return "qualified"
+    else:
+        return "low_score"
+
+
+current_score = 0.82
+
+retrieval_status = check_retrieval_score(current_score)
+
+print(f"检索状态：{retrieval_status}")
+
+# 6. 为什么不能只用 print()？
+"""
+判断检索结果
+↓
+得到状态
+↓
+保存到字典
+↓
+后续决定是否生成回答
+
+例如以后我们希望：current_result["retrieval_status"] = retrieval_status
+"""
+
+# 7. return 后面的值可以保存到变量
+def get_ticket_status(resolved):
+    if resolved:
+        return "已解决"
+    else:
+        return "未解决"
+
+
+ticket_status = get_ticket_status(False)

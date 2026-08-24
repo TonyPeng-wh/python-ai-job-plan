@@ -1,0 +1,16 @@
+def show_feedback(category, priority):
+    print(f"反馈类型：{category}")
+    print(f"优先级：{priority}")
+
+
+show_feedback("回答错误", "HIGH")
+
+"""
+① "回答错误" 会传给哪个参数？
+category
+② "HIGH" 会传给哪个参数？
+priority
+③ 完整输出是什么？
+反馈类型：回答错误
+优先级：HIGH
+"""

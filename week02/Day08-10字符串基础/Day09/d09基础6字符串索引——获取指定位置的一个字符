@@ -1,0 +1,50 @@
+"""
+一、什么是索引
+字符串中的每个字符都有一个位置编号，这个编号叫作索引。
+例如：
+document_code = "AI-2026"
+位置关系：
+字符： A  I  -  2  0  2  6
+索引： 0  1  2  3  4  5  6
+Python 的索引从 0 开始，不是从 1 开始。
+因此：
+document_code[0]
+得到：
+A
+而：
+document_code[1]
+得到：
+I
+二、基本语法
+字符变量 = 字符串变量[索引位置]
+"""
+
+# # document_code：文档编号
+# document_code = "AI-2026"
+
+# # first_character：文档编号的第一个字符
+# first_character = document_code[0]
+
+# print(f"第一个字符：{first_character}")
+
+
+
+# ticket_code：用户输入并清除两端空白后的工单编号
+ticket_code = input("请输入工单编号：").strip()
+
+if len(ticket_code) > 0:
+    # source_code：工单编号的第一个字符
+    source_code = ticket_code[0]
+
+    print(f"工单编号首字符：{source_code}")
+
+    if source_code == "C":
+        print("工单来源：客户提交")
+    elif source_code == "A":
+        print("工单来源：AI系统自动生成")
+    elif source_code == "M":
+        print("工单来源：人工录入")
+    else:
+        print("无法识别工单来源")
+else:
+    print("工单编号不能为空")

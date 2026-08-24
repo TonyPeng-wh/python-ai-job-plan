@@ -1,0 +1,15 @@
+# original_status：用户输入的原始日志
+original_status = input("请输入原始日志：")
+
+# normalized_status:统一转换为小写后的日志
+normalized_status = original_status.lower()
+
+# delay_keyword_is_found:是否发现延迟关键词
+delay_keyword_is_found = "delay" in normalized_status
+
+print(f"输出标准化的物流状态：{normalized_status}")
+
+if delay_keyword_is_found:
+    print("发现物流延迟")
+else:
+    print("未发现物流延迟")

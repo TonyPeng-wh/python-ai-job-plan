@@ -1,0 +1,5 @@
+feedback_id,product_model,issue,urgent,submitted
+F001,EV-C200,车辆快充过程中偶尔中断,True,False
+F002,EV-C300,中控屏偶尔黑屏,False,True
+F003,EV-C500,车辆无法启动,True,False
+F004,EV-C600,空调制冷效果差,False,False

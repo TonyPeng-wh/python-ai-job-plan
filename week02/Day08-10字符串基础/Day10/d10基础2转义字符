@@ -1,0 +1,52 @@
+"""
+转义字符用于表示换行、制表符、引号等特殊内容。
+
+\n：换行
+
+message = "检索完成\n开始生成回答"
+print(message)
+
+输出：
+检索完成
+开始生成回答
+"""
+
+# retrieval_status：检索状态
+retrieval_status = "检索成功"
+
+# generation_status：回答生成状态
+generation_status = "回答生成成功"
+
+# process_report：多行处理报告
+process_report = (
+    f"检索状态：{retrieval_status}\n"
+    f"生成状态：{generation_status}"
+)
+
+print(process_report)
+
+
+"""
+\t：制表符
+它用于在控制台中留出较大的间隔。
+"""
+
+print("指标\t结果")
+print("检索分数\t0.86")
+print("回答分数\t0.91")
+
+
+"""
+\\：显示反斜杠
+"""
+
+file_path = "C:\\knowledge_base\\report.txt"
+print(file_path)
+
+"""
+当前重点记住：
+\n   换行
+\t   制表符
+\"   双引号
+\\   反斜杠
+"""

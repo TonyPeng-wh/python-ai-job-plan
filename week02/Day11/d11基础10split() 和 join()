@@ -1,0 +1,35 @@
+#   split() 和 join()
+# split() → 字符串变列表，基本语法是：字符串.split("分隔符")
+# split(",") 里的 "," 是遇到逗号，就从那里切开。也可以按其他字符拆
+# 知道位置 → 切片 [start:end+1]
+# 知道分隔符 → split()
+# join()  → 多个字符串元素拼成字符串，基本语法："连接符".join(字符串列表)
+# join() 有一个重要前提：列表中的元素必须是字符串。
+
+ticket_text = "AUTH,TIMEOUT,NETWORK"
+ticket_categories = ticket_text.split(",")#真正由 .split(",") 生成的新列表保存在这里
+print(ticket_categories)
+print(type(ticket_categories))
+
+# 工作场景：用户输入多个检索关键词
+# raw_keywords = input("请输入检索关键词，使用逗号分隔：")
+# keywords = raw_keywords.strip().lower().split(",")
+# print(keywords)
+
+
+# join()：把多个字符串元素连接成一个字符串
+model_names = ["qwen", "deepseek", "gpt"]
+model_text = ",".join(model_names)
+print(model_text)
+print(type(model_text))
+
+
+# AI 应用场景为什么常用它们？以后做 RAG、工单分类、模型调用时非常常见。
+# 比如接口返回一段标签文本：timeout,network,retry
+# 你需要逐个处理标签，就可以：
+tag_text = "timeout,network,retry"
+tags = tag_text.split(",")
+for tag in tags:
+    print(tag)
+result_text = " | ".join(tags)
+print(result_text)

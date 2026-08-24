@@ -1,0 +1,19 @@
+def count_answer_errors(feedbacks):
+    answer_error_count = 0
+
+    for current_feedback in feedbacks:
+        if current_feedback["category"] == "回答错误":
+            answer_error_count = answer_error_count + 1
+
+    return answer_error_count
+
+feedback_list = [
+    {"category": "回答错误", "processed": False},
+    {"category": "检索失败", "processed": True},
+    {"category": "回答错误", "processed": False},
+    {"category": "格式问题", "processed": True}
+]
+
+result = count_answer_errors(feedback_list)
+
+print(f"回答错误数量：{result}")

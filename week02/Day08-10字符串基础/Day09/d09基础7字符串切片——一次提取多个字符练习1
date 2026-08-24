@@ -1,0 +1,10 @@
+#   order_code:订单编号
+order_code = input("请输入订单编号").strip()
+
+if len(order_code) >= 7:
+    #   order_year：提取年份
+    order_year = order_code[3:7]
+
+    print(f"订单年份为{order_year}")
+else:
+    print("订单编号格式不完整")

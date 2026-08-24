@@ -1,0 +1,44 @@
+#   condition_1 and condition_2
+#   只有当左右两个条件都为 True 时，最终结果才是 True。
+
+"""
+answer_quality_score = 0.85
+token_count = 2500
+
+answer_quality_is_qualified = answer_quality_score >= 0.8
+token_count_is_qualified = token_count < 3000
+
+print(answer_quality_is_qualified)
+print(token_count_is_qualified)
+
+
+answer_quality_is_qualified = True
+token_count_is_qualified = True
+
+overall_result_is_qualified = (
+    answer_quality_is_qualified and token_count_is_qualified
+)
+
+print(overall_result_is_qualified)
+"""
+
+#   answer_quality_score: 回答质量分数
+answer_quality_score = float(input("请输入回答质量分数:"))
+
+#   token_count:    Token数量
+token_count = int(input("请输入Token数量:"))
+
+#   answer_quality_is_qualified :回答质量是否合格
+answer_quality_is_qualified = answer_quality_score >= 0.8
+
+#   token_count_is_qualified:token数量是否合格
+token_count_is_qualified = token_count < 3000
+
+#basic_check_is_qualified:基础检查是否合格
+basic_check_is_qualified = (
+    answer_quality_is_qualified and token_count_is_qualified
+)
+
+print(f"回答质量分数是否合格：{answer_quality_is_qualified}")
+print(f"token数量是否合格:{token_count_is_qualified}")
+print(f"基础检查是否合格:{basic_check_is_qualified}")

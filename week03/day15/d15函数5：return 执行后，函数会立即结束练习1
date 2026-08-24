@@ -1,0 +1,20 @@
+def check_ticket(priority):
+    if priority == "HIGH":
+        return "立即处理"
+
+    print("进入普通队列")
+    return "正常处理"
+
+
+ticket_result = check_ticket("HIGH")
+
+print(f"处理结果：{ticket_result}")
+
+"""
+请回答两个问题：
+
+① print("进入普通队列") 会不会执行？为什么？
+不会，因为if输出为True,到return就结束了
+② 最后的完整输出是什么？
+处理结果：立即处理      传进去的值（HIGH） ≠ 函数返回出来的值。
+"""

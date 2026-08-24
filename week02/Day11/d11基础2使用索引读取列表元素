@@ -1,0 +1,30 @@
+#   学会从一个 list 中读取指定位置的某一个元素。
+#   基本语法：列表变量[索引]
+
+answer_quality_scores = [0.86, 0.92, 0.78, 0.95]
+
+first_score = answer_quality_scores[0]
+
+print(first_score)
+
+#   负索引你也可以直接迁移
+retrieval_scores = [0.91, 0.84, 0.76, 0.88]
+
+last_score = retrieval_scores[-1]
+
+print(last_score)
+
+"""
+[0.91, 0.84, 0.76, 0.88]
+   0     1     2     3
+
+  -4    -3    -2    -1
+  这一点和字符串索引规则一致。
+"""
+
+model_names = ["qwen", "deepseek", "gpt", "glm"]
+
+selected_model = model_names[1]
+
+print(selected_model)
+print(type(selected_model))

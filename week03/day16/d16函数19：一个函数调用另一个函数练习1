@@ -1,0 +1,22 @@
+def ticket_needs_review(priority):
+    return priority == "HIGH"
+
+
+def process_ticket(priority):
+    needs_review = ticket_needs_review(priority)
+
+    if needs_review:
+        print("提交人工复核")
+    else:
+        print("正常处理")
+
+
+process_ticket("LOW")
+
+"""
+只回答两个问题：
+① ticket_needs_review(priority) 返回什么？
+False
+② 最终输出什么？
+正常处理
+"""

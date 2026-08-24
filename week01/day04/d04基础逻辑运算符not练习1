@@ -1,0 +1,31 @@
+"""
+完成一个“RAG 检索结果是否需要重试”的程序。
+需要输入：retrieval_score
+判断标准：
+
+检索分数大于或等于 0.75，表示检索合格
+检索不合格时，需要重试
+
+建议变量名：
+retrieval_is_qualified：检索是否合格
+retry_is_needed：是否需要重试
+
+核心逻辑：
+retry_is_needed = not retrieval_is_qualified
+
+输出格式：
+检索是否合格：True
+是否需要重试：False
+"""
+
+#   retrieval_score检索分数
+retrieval_score = float(input("请输入检索分数:"))
+
+#   retrieval_score_is_qualified检索是否合格
+retrieval_score_is_qualified = retrieval_score >= 0.75
+
+#   retry_is_needed是否需要重试
+retry_is_needed = not retrieval_score_is_qualified
+
+print(f"检索是否合格:{retrieval_score_is_qualified}")
+print(f"是否需要重试:{retry_is_needed}")

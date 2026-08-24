@@ -1,0 +1,26 @@
+[
+    {
+        "evaluation_id": "E001",
+        "question": "车辆快充过程中频繁中断怎么办？",
+        "answer_score": 0.62,
+        "submitted": false
+    },
+    {
+        "evaluation_id": "E002",
+        "question": "胎压报警灯亮起应该怎么处理？",
+        "answer_score": 0.91,
+        "submitted": false
+    },
+    {
+        "evaluation_id": "E003",
+        "question": "车辆无法启动的常见原因有哪些？",
+        "answer_score": 0.58,
+        "submitted": false
+    },
+    {
+        "evaluation_id": "E004",
+        "question": "空调制冷效果差如何排查？",
+        "answer_score": 0.70,
+        "submitted": true
+    }
+]

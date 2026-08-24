@@ -1,0 +1,129 @@
+# 字典 dict 11：列表和字典组合使用
+
+"""
+model_results = [
+    {
+        "model_name": "deepseek",
+        "quality_score": 0.91,
+        "request_succeeded": True
+    },
+    {
+        "model_name": "qwen",
+        "quality_score": 0.88,
+        "request_succeeded": True
+    },
+    {
+        "model_name": "glm",
+        "quality_score": 0.72,
+        "request_succeeded": False
+    }
+]
+
+# 为什么这样组织数据？
+列表
+→ 保存很多条记录
+
+字典
+→ 描述一条记录有哪些字段
+
+
+# 使用 for 逐条处理
+for current_result in model_results:
+    print(current_result)
+
+# 当前字典里再通过 key 读取值
+for current_result in model_results:
+    model_name = current_result["model_name"]
+    quality_score = current_result["quality_score"]
+
+    print(f"模型名称：{model_name}")
+    print(f"回答评分：{quality_score}")
+
+
+# =======5. 这里有三层变量========
+model_results
+→ 所有记录
+→ list
+
+current_result
+→ 当前一条记录
+→ dict
+
+quality_score
+→ 当前记录里的一个字段值
+→ float
+"""
+
+# 6. 工作场景：筛选低质量回答,找出评分低于 0.80 的模型调用。
+
+model_results = [
+    {
+        "model_name": "deepseek",
+        "quality_score": 0.91,
+        "request_succeeded": True
+    },
+    {
+        "model_name": "qwen",
+        "quality_score": 0.88,
+        "request_succeeded": True
+    },
+    {
+        "model_name": "glm",
+        "quality_score": 0.72,
+        "request_succeeded": False
+    }
+]
+for current_result in model_results:
+    model_name = current_result["model_name"]
+    quality_score = current_result["quality_score"]
+
+    if quality_score < 0.80:
+        print(f"低质量回答模型：{model_name}")
+
+# 7. 另一个典型场景：AI 工单列表
+ticket_list = [
+    {
+        "ticket_id": "TKT-001",
+        "category": "超时故障",
+        "priority": "HIGH"
+    },
+    {
+        "ticket_id": "TKT-002",
+        "category": "网络故障",
+        "priority": "LOW"
+    },
+    {
+        "ticket_id": "TKT-003",
+        "category": "超时故障",
+        "priority": "HIGH"
+    }
+]
+for current_ticket in ticket_list:
+    ticket_id = current_ticket["ticket_id"]
+    ticket_category = current_ticket["category"]
+
+    print(f"{ticket_id}：{ticket_category}")
+
+
+# 8. 为什么这一结构以后特别常见？
+# 你未来做的方向包括 RAG、智能体、模型调用、工单分类等，这些场景通常都有：
+# 很多条数据
+# ↓
+# list
+
+# 每条数据有多个字段
+# ↓
+# dict
+
+# 这一节需要真正理解:
+# model_results
+# → list
+
+# model_results 中的每一个元素
+# → dict
+
+# "model_name"
+# → key
+
+# "deepseek"
+# → value

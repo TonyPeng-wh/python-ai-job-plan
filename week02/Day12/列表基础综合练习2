@@ -1,0 +1,30 @@
+retrieval_scores = [0.82, 0.91, 0.76, 0.88, 0.91]
+scores_count = len(retrieval_scores)
+print(scores_count)
+
+score_exists1 = 0.91 in retrieval_scores
+if score_exists1:
+    score_count = retrieval_scores.count(0.91)
+    print(score_count)
+else:
+    print("评分0.91不存在")
+
+score_exists2 = 0.76 in retrieval_scores
+if score_exists2:
+    score_index = retrieval_scores.index(0.76)
+    print(score_index)
+else:
+    print("评分0.76不存在")
+
+retrieval_scores[2] = 0.86
+print(retrieval_scores)
+
+retrieval_scores.append(0.94)
+print(retrieval_scores)
+
+retrieval_scores.sort(reverse=True)
+print(retrieval_scores)
+
+for current_score in retrieval_scores:
+    print(f"当前检索分数为{current_score}")
+

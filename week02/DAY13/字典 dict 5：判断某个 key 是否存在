@@ -1,0 +1,30 @@
+#   字典 dict ⑤：判断某个 key 是否存在
+#   你之前已经在字符串、列表中用过 in。字典里也能用。
+ticket_info = {
+    "ticket_id": "TKT-001",
+    "category": "超时故障",
+    "priority": "HIGH"
+}
+
+priority_exists = "priority" in ticket_info     #判断的是："priority" 这个 key 是否存在。不是在判断 value。
+
+print(priority_exists)
+
+
+#为什么要先判断 key 是否存在？
+# 如果 "priority" 不存在，会报：KeyError
+priority_exists = "priority" in ticket_info
+
+if priority_exists:
+    ticket_priority = ticket_info["priority"]
+    print(ticket_priority)
+else:
+    print("priority 字段不存在")
+
+# 先判断 key 是否存在
+# ↓
+# 存在 → 再读取 value
+# ↓
+# 不存在 → 不执行读取
+
+# =======先满足前置条件，再执行可能报错的操作。=======

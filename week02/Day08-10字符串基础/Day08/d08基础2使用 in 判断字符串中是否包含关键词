@@ -1,0 +1,18 @@
+# 使用 in 判断字符串中是否包含关键词
+# 基本语法：关键词 in 字符串，判断结果是布尔值
+# 判断一段用户问题或工单描述中，是否出现指定关键词。
+# 包含关键词 → True
+# 不包含关键词 → False
+
+# ticket_description：用户输入的工单描述
+ticket_description = input("请输入工单描述：")
+
+# charging_keyword_is_found：描述中是否包含“充电”
+charging_keyword_is_found = "充电" in ticket_description
+
+print(f"是否包含充电关键词：{charging_keyword_is_found}")
+
+if charging_keyword_is_found:
+    print("可能属于充电故障工单")
+else:
+    print("暂未发现充电故障关键词")

@@ -1,0 +1,26 @@
+"""
+循环结束后计算平均值
+新增变量：
+average_page_count每份文档的平均页数
+类型：float
+计算公式：average_page_count = total_page_count / 4
+
+"""
+
+#total_page_count:累计文档页数
+total_page_count = 0
+
+#document_number:当前文档编号
+for document_number in range(1, 5):
+    page_count = int(
+        input(f"请输入第{document_number}份文档的页数：")
+        )
+
+    total_page_count = total_page_count + page_count
+    
+
+#average_page_count平均每份文档页数
+average_page_count = total_page_count / 4
+print(f"平均每份文档页数：{average_page_count:.1f}")
+print(f"四份文档的总页数：{total_page_count}")
+print("文档页数统计结束")

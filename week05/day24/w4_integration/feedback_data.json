@@ -1,0 +1,23 @@
+[
+    {
+        "feedback_id": "F001",
+        "product_model": "EV-C200",
+        "feedback": "车辆快充过程中偶尔中断",
+        "urgent": false,
+        "submitted": false
+    },
+    {
+        "feedback_id": "F002",
+        "product_model": "EV-C300",
+        "feedback": "中控屏偶尔黑屏",
+        "urgent": false,
+        "submitted": true
+    },
+    {
+        "feedback_id": "F003",
+        "product_model": "EV-C500",
+        "feedback": "车辆无法启动",
+        "urgent": true,
+        "submitted": false
+    }
+]

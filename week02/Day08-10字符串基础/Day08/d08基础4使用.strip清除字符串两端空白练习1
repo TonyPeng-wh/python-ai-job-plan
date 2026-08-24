@@ -1,0 +1,12 @@
+# original_description：原始工单描述
+original_description = input("请输入原始工单描述：")
+
+#cleaned_description:清理后的工单描述
+cleaned_description = original_description.strip()
+
+if len(cleaned_description) == 0:
+    print("工单描述不能为空")
+else:
+    print("工单描述已接受")
+
+print(f"清理后的字符数量：{len(cleaned_description)}")

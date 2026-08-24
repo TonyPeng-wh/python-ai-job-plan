@@ -1,0 +1,19 @@
+"""
+独立练习：模型响应速度检查
+要求：
+
+输入模型响应时间，类型为 float
+最大允许响应时间为 3.0 秒
+响应时间小于或等于 3.0 时输出：响应速度合格。
+否则输出：响应速度过慢，需要优化。
+最后无论结果如何，都输出：响应速度检查结束。
+"""
+
+response_time = float(input("请输入响应时间:"))
+max_response_time = 3.0
+if response_time <= max_response_time:
+    print("响应速度合格")
+else:
+    print("响应速度不合格")
+    print(f"本次响应时间：{response_time:.1f}秒")
+    print("响应速度检查结束")

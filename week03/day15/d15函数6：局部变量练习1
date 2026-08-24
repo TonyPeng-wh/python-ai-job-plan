@@ -1,0 +1,17 @@
+def check_feedback(category):
+    review_status = "需要复核"
+    return review_status
+
+
+feedback_result = check_feedback("回答错误")
+
+print(feedback_result)
+
+"""
+回答两个问题：
+
+① review_status 是函数内部变量还是函数外部变量？
+內部
+② feedback_result 最终保存什么值？
+需要复核
+"""

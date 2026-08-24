@@ -1,0 +1,91 @@
+"""
+今天只解决三个问题：
+函数为什么存在？
+def 是什么意思？
+定义函数和调用函数有什么区别？
+
+
+"""
+
+# 1. 为什么需要函数？
+# print("=== AI 用户反馈统计报告 ===")
+
+# print("反馈总数：20")
+
+# print("=== AI 用户反馈统计报告 ===")
+
+# print("回答错误数量：5")
+
+# print("=== AI 用户反馈统计报告 ===")
+
+# print("未处理反馈数量：8")
+# # 代码能运行。但是 "=== AI 用户反馈统计报告 ===" 写了三遍。
+
+# def print_report_title():          #定义函数。
+#     print("=== AI 用户反馈统计报告 ===")
+# # 给一段代码取一个名字，以后需要执行这段代码时，直接叫这个名字。
+
+
+"""
+2. def 是什么？
+我要定义一个函数。
+所以整个结构可以先记成：
+def 函数名():
+    函数里面要执行的代码
+
+3. 最重要的区别：定义 ≠ 执行
+这是今天最重要的知识点。
+"""
+#如果代码只有：
+# def print_report_title():
+#     print("=== AI 用户反馈统计报告 ===")
+# 打印不出来，因为我们现在只是告诉 Python：有一段代码，我给它起名叫 print_report_title。
+
+# 4. 怎么真正执行函数？
+# def print_report_title():
+#     print("=== AI 用户反馈统计报告 ===")
+# print_report_title()
+
+def print_report_title():
+    print("=== AI 用户反馈统计报告 ===")
+print("开始生成报告")
+print_report_title()
+print("报告生成完成")
+
+"""
+① Python 看到 def
+↓
+知道存在一个叫 print_report_title 的函数
+↓
+但暂时不执行函数里的 print()
+
+② 执行 print("开始生成报告")
+
+③ 遇到 print_report_title()
+↓
+调用函数
+↓
+进入函数
+↓
+执行里面的 print()
+
+④ 函数执行结束
+↓
+回来继续往下运行
+
+⑤ 执行 print("报告生成完成")
+"""
+
+
+def print_report_title():
+    print("=== AI 用户反馈统计报告 ===")
+
+
+print_report_title()
+print("反馈总数：20")
+
+print_report_title()
+print("回答错误数量：5")
+
+print_report_title()
+print("未处理反馈数量：8")

@@ -1,0 +1,54 @@
+"""
+完成一个“RAG 检索基础检查程序”。
+retrieval_score
+response_time_ms
+判断标准：
+
+检索分数大于或等于 0.75
+响应时间小于或等于 2000
+两项都合格时，RAG 检查才合格
+
+建议使用以下变量名：
+retrieval_score_is_qualified
+response_time_is_qualified
+rag_check_is_qualified
+输出格式：
+检索分数是否合格：True
+响应时间是否合格：True
+RAG 检查是否合格：True
+只能使用目前学过的内容：
+变量
+input
+float
+int
+比较运算符
+and
+print
+f-string
+完成标准:
+正确使用 >=
+正确使用 <=
+正确使用一次 and
+最终结果保存到一个布尔变量中
+能解释为什么 True and False 的结果是 False
+"""
+#   retrieval_score:检索分数
+retrieval_score = float(input("请输入检索分数:"))
+
+#   response_time_ms:响应时间
+response_time_ms = int(input("请输入响应时间:"))
+
+#   retrieval_score_is_qualified:检索分数是否合格
+retrieval_score_is_qualified = retrieval_score >= 0.75
+
+#   response_time_ms_is_qualified:响应时间是否合格
+response_time_ms_is_qualified = response_time_ms <= 2000
+
+#   rag_check_is_qualified:RAG检查是否合格
+rag_check_is_qualified = (
+    retrieval_score_is_qualified and response_time_ms_is_qualified
+)
+
+print(f"检索分数是否合格:{retrieval_score_is_qualified}")
+print(f"响应时间是否合格:{response_time_ms_is_qualified}")
+print(f"RAG检查是否合格:{rag_check_is_qualified}")

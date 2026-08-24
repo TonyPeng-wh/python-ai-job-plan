@@ -1,0 +1,15 @@
+#   使用 .isalpha() 判断字符串是否全部由文字字符组成
+#   基本语法:判断结果 = 字符串.isalpha()/////bool
+
+# agent_name：用户输入并清理后的客服人员姓名
+agent_name = input("请输入客服人员姓名：").strip()
+
+# agent_name_is_alpha：姓名是否全部由文字字符组成
+agent_name_is_alpha = agent_name.isalpha()
+
+print(f"姓名是否只包含文字：{agent_name_is_alpha}")
+
+if agent_name_is_alpha:
+    print("客服人员姓名格式初步正确")
+else:
+    print("客服人员姓名中包含数字、空格或特殊符号")

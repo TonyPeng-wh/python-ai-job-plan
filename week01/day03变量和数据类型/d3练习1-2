@@ -1,0 +1,46 @@
+"""
+复习：
+print()
+注释
+变量 
+str, int, float, bool
+type()函数
+input()函数
+int()函数类型转换
+f-string格式化输出
+
+
+
+
+使用至少四个 print()，输出：
+姓名：TonyPeng
+专业：新能源汽车工程
+目标岗位：AI应用工程师
+当前学习内容：Python基础
+
+要求：
+每行使用一个 print()
+字符串使用英文引号
+文件开头添加一段程序说明
+
+
+
+print("姓名：TonyPeng")
+print("专业：新能源汽车工程")
+print("目标岗位 ：AI应用工程师")
+print("当前学习内容：Python基础")
+
+
+
+练习2：区分变量和字符串
+
+name = "TonyPeng"
+target_role = "AI"
+
+print(name)
+print("name")
+print(target_role)
+print("target_role")
+"""
+
+

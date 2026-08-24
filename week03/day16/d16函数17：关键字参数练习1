@@ -1,0 +1,20 @@
+def show_result(document_title, retrieval_score):
+    print(f"文档：{document_title}")
+    print(f"分数：{retrieval_score}")
+
+
+show_result(
+    retrieval_score=0.88,
+    document_title="高压系统安全规范"
+)
+
+"""
+回答：
+① document_title 最终是什么值？
+"高压系统安全规范"
+② retrieval_score 最终是什么值？
+0.88
+③ 完整输出是什么？
+文档：高压系统安全规范
+分数：0.88
+"""

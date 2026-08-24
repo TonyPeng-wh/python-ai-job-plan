@@ -1,0 +1,92 @@
+"""
+函数综合②：一个函数调用另一个函数
+一个函数里面，也可以调用另一个函数。
+"""
+def count_answer_errors(feedbacks):
+    answer_error_count = 0
+
+    for current_feedback in feedbacks:
+        if current_feedback["category"] == "回答错误":
+            answer_error_count = answer_error_count + 1
+
+    return answer_error_count
+
+
+def show_answer_error_report(feedbacks): # 自己不负责统计。它让：count_answer_errors()负责统计，然后拿到统计结果再输出。
+ #   这就是以后真实项目里很常见的： 一个函数负责一个小任务，再由其他函数把这些小任务组合起来。 
+    answer_error_count = count_answer_errors(feedbacks)
+
+    print(f"回答错误数量：{answer_error_count}")
+
+
+
+
+def count_answer_errors(feedbacks):
+    answer_error_count = 0
+
+    for current_feedback in feedbacks:
+        if current_feedback["category"] == "回答错误":
+            answer_error_count = answer_error_count + 1
+
+    return answer_error_count
+
+
+def check_feedback_risk(feedbacks):  # 因为只有当这段“风险判断逻辑”本身也需要被重复使用时，才值得把它封装成函数。
+    answer_error_count = count_answer_errors(feedbacks)
+
+    if answer_error_count >= 3:
+        return "需要重点检查"
+    else:
+        return "正常"
+
+"""
+所以现在你要建立一个很重要的判断：
+不是看到一段代码就必须定义函数。
+函数通常在这些情况下更值得写：
+1.这段逻辑以后要反复使用；
+2.这段逻辑比较独立，有明确职责；
+3.主程序越来越长，拆出来以后更容易读和维护。
+"""
+
+def count_answer_errors(feedbacks):
+    answer_error_count = 0
+
+    for current_feedback in feedbacks:
+        if current_feedback["category"] == "回答错误":
+            answer_error_count = answer_error_count + 1
+
+    return answer_error_count
+
+morning_feedbacks = [
+    {"category": "回答错误"},
+    {"category": "格式问题"},
+    {"category": "回答错误"}
+]
+
+afternoon_feedbacks = [
+    {"category": "检索失败"},
+    {"category": "格式问题"},
+    {"category": "回答错误"}
+]
+
+evening_feedbacks = [
+    {"category": "回答错误"},
+    {"category": "回答错误"},
+    {"category": "回答错误"}
+]
+
+morning_error_count = count_answer_errors(morning_feedbacks)
+afternoon_error_count = count_answer_errors(afternoon_feedbacks)
+evening_error_count = count_answer_errors(evening_feedbacks)
+
+def check_feedback_risk(feedbacks):
+    answer_error_count = count_answer_errors(feedbacks)
+
+    if answer_error_count >= 3:
+        return "高风险"
+    else:
+        return "正常"
+
+morning_risk = check_feedback_risk(morning_feedbacks)
+afternoon_risk = check_feedback_risk(afternoon_feedbacks)
+evening_risk = check_feedback_risk(evening_feedbacks)

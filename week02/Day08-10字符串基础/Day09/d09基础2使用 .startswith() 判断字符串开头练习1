@@ -1,0 +1,16 @@
+#   original_ticket：原始工单内容
+original_ticket = input("请输入原始工单内容：")
+
+#   normalized_ticket:标准化后的工单内容
+normalized_ticket = original_ticket.strip().upper()
+
+#   urgent_prefix_is_found:是否为紧急工单内容
+urgent_prefix_is_found = normalized_ticket.startswith("URGENT")
+
+if urgent_prefix_is_found:
+    print("这是紧急工单")
+else:
+    print("这是普通工单")
+
+print(f"标准化后的工单内容：{normalized_ticket}")
+print(f"是否以URGENT开头：{urgent_prefix_is_found}")

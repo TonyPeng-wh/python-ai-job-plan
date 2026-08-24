@@ -1,0 +1,57 @@
+"""
+什么是字典？
+key 和 value 分别是什么？
+怎么创建一个字典？
+"""
+
+# 1. 为什么需要字典？
+# 字典可以直接给每项数据加上“名称”：
+# 这样数据的业务含义就很明确。
+model_result = {
+    "model_name": "deepseek",
+    "quality_score": 0.92,
+    "request_succeeded": True
+}
+
+
+# 2. 字典的核心：  key : value
+
+# "quality_score": 0.92
+# "quality_score" : 0.92
+#        ↓           ↓
+#       key        value
+#        键           值
+#   key表示：这项数据叫什么。
+#   value表示：这项数据实际保存什么。
+
+
+# 3. 一个字典可以有多组键值对
+
+model_result = {
+    "model_name": "deepseek",       #不同键值对之间用：,分隔。
+    "quality_score": 0.92,          #键和值之间用：:连接。
+    "request_succeeded": True       #键值对（key-value pair）
+}
+
+# 4. 字典使用 {}
+#现阶段可以先通过外形区分：
+# [] → list
+# {} → dict
+
+# 5. 整个变量的数据类型是 dict，但是字典里面的 value 可以有不同类型
+model_result = {
+    "model_name": "deepseek",
+    "quality_score": 0.92,
+    "request_succeeded": True
+}
+
+print(type(model_result))
+
+
+#6. 字典和列表目前最重要的区别
+# list:主要依靠：索引位置0、1、2……识别数据。
+# dict:主要依靠：key识别数据。
+
+# 7. 空字典
+model_result = {}
+print(type(model_result))

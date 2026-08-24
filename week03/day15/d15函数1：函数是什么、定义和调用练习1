@@ -1,0 +1,8 @@
+def show_report():
+    print("正在生成AI反馈报告")
+
+
+print("程序开始")
+show_report()
+print("统计完成")
+show_report()

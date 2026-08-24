@@ -1,0 +1,84 @@
+#   remove() → 按“值”删除
+#   pop()    → 按“位置”删除
+
+#   1. remove()：根据元素的值删除
+model_names = ["qwen", "deepseek", "gpt", "glm"]
+
+model_names.remove("gpt")
+
+print(model_names)
+#   列表.remove(要删除的元素)
+#   2. 如果相同元素出现多次呢？
+ticket_categories = [
+    "超时故障",
+    "鉴权故障",
+    "超时故障",
+    "网络故障"
+]
+ticket_categories.remove("超时故障")
+print(ticket_categories)#   remove() 只删除第一次出现的那个元素。
+
+#   3. remove() 有一个风险
+# model_names = ["qwen", "deepseek", "gpt"]
+# model_names.remove("glm")
+# print(model_names)
+#   ValueError: list.remove(x): x not in list
+
+model_names = ["qwen", "deepseek", "gpt"]
+
+model_exists = "glm" in model_names
+
+if model_exists:
+    model_names.remove("glm")
+    print(model_names)
+else:
+    print("目标模型不存在")
+
+#先用 in 判断
+# ↓
+# 存在
+# → remove()
+# 不存在
+# → 不执行 remove()
+
+
+#   4. pop()：根据索引位置删除
+model_names = ["qwen", "deepseek", "gpt", "glm"]
+model_names.pop(1)
+
+print(model_names)
+#   基本语法：列表.pop(索引)
+
+
+#知道“删什么”
+# → remove()
+# 知道“删第几个”
+# → pop()
+
+
+###pop() 还会把被删除的元素返回出来
+model_names = ["qwen", "deepseek", "gpt"]
+
+removed_model = model_names.pop(1)   #  .pop()如果不给索引，默认删除：最后一个元素gpt,相当于这里删除：model_names[-1]
+
+print(model_names)
+print(removed_model)
+
+# 第一件事：
+# 把 "deepseek" 从 model_names 里删除
+
+# 第二件事：
+# 把被删除的 "deepseek" 返回出来
+# 保存到 removed_model
+
+#pop() 使用的索引必须是列表中实际存在的位置。如果list中只有0，1，pop(5)会报错
+
+# 两个方法都直接修改原列表，但 pop() 有一点不同：因为这里保存的不是修改后的列表，而是：被删除的那个元素。
+
+# | 写法                       | 根据什么操作 | 结果               |
+# | ------------------------ | ------ | ---------------- |
+# | `remove("gpt")`          | 元素值    | 删除第一次出现的 `"gpt"` |
+# | `pop(1)`                 | 索引     | 删除索引 `1`         |
+# | `pop()`                  | 默认位置   | 删除最后一个           |
+# | `removed_model = pop(1)` | 索引     | 删除并得到被删除元素       |
+#最核心的一句话：remove() 按值删除；pop() 按索引删除，而且 pop() 可以拿到被删除的元素。

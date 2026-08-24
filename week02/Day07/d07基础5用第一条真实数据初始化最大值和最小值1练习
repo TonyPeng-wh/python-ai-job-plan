@@ -1,0 +1,29 @@
+# 独立练习：接口响应时间统计
+# 输入5次接口响应时间，统计最高响应时间和最低响应时间。
+
+# current_response_time：第一次响应时间
+current_response_time = int(
+    input(f"请输入第1次响应时间：")
+)
+
+# highest_response_time：最高响应时间
+highest_response_time = current_response_time
+
+# lowest_response_time:最低响应时间
+lowest_response_time = current_response_time
+
+# request_number:当前请求编号
+for request_number in range(2, 6):
+    #current_request_number:当前请求的响应时间
+    current_request_time = int(
+        input(f"第{request_number}次响应时间：")
+    )
+
+    if current_request_time > highest_response_time:
+        highest_response_time = current_request_time
+
+    if current_request_time < lowest_response_time:
+        lowest_response_time = current_request_time
+
+print(f"最高响应时间为：{highest_response_time}")
+print(f"最低响应时间为：{lowest_response_time}")

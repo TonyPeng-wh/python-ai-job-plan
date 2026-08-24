@@ -1,0 +1,7 @@
+def show_feedback_category(feedback_category):
+    print(f"反馈类型：{feedback_category}")
+
+current_category = "回答错误"
+
+show_feedback_category(current_category)
+show_feedback_category("检索失败")

@@ -1,0 +1,25 @@
+"""
+出现次数 = 字符串.count("需要统计的内容")
+.count() 返回的是整数 int。
+
+
+"""
+
+# message = "失败，重试后仍然失败"
+# failure_count = message.count("失败")
+
+# print(failure_count)
+
+
+# customer_review：用户输入的商品评价
+customer_review = input("请输入商品评价：")
+
+# damage_keyword_count：“破损”关键词出现的次数
+damage_keyword_count = customer_review.count("破损")
+
+print(f"“破损”关键词出现次数：{damage_keyword_count}")
+
+if damage_keyword_count > 0:
+    print("评价中提到了商品破损问题")
+else:
+    print("评价中未提到商品破损问题")

@@ -1,0 +1,7 @@
+"""
+===练习7：学习时间计算===
+让用户输入每周学习小时数，然后计算每天平均学习时间。
+"""
+weekly_hours = int(input("请输入每周学习时间:"))
+daily_hours = float(weekly_hours/7)
+print(f"每天平均学习时间为{daily_hours:.1f}小时")                         

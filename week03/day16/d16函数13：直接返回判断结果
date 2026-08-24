@@ -1,0 +1,16 @@
+"""
+d16函数13：直接返回判断结果
+刚才我们写的是：
+def answer_is_qualified(answer_score):
+    if answer_score >= 0.8:
+        return True
+    else:
+        return False
+其实：answer_score >= 0.8这个判断本身的结果就已经是 True 或 False。
+所以可以直接写：两种都可以写，第二种只是更简洁。
+"""
+def answer_is_qualified(answer_score):
+    return answer_score >= 0.8
+
+check_result = answer_is_qualified(0.2)
+print(check_result)

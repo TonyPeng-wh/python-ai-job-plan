@@ -1,0 +1,60 @@
+"""
+下一步：continue 跳过当前这一轮
+你刚学的 break 是：
+直接结束整个循环。
+continue 是：
+只结束当前这一轮，然后进入下一轮循环。
+两者区别：
+break     → 后面的所有轮次都不再执行
+continue  → 当前这一轮后面的代码不执行，但循环继续
+工作场景：跳过无效的模型评分
+系统需要检查 5 次模型回答评分。
+暂时规定：
+输入 0：本次评分数据无效，跳过
+输入大于 0 的分数：加入总分
+当前练习只学习 continue，先假设输入为整数。
+变量含义
+total_score
+含义：累计有效评分的总分
+类型：int
+初始值：0
+只有评分有效时才增加
+valid_score_count
+含义：累计有效评分数量
+类型：int
+初始值：0
+评分有效时增加 1
+score_number
+含义：当前是第几次评分
+类型：int
+由 for 自动依次保存 1、2、3、4、5
+current_score
+含义：当前输入的评分
+类型：int
+每轮保存新的输入数据
+"""
+
+# total_score：累计有效评分总分
+total_score = 0
+
+# valid_score_count：累计有效评分数量
+valid_score_count = 0
+
+# score_number：当前评分编号
+for score_number in range(1, 6):
+    # current_score：当前输入的评分
+    current_score = int(
+        input(f"请输入第{score_number}次模型评分，输入0表示无效：")
+    )
+
+    if current_score == 0:
+        print(f"第{score_number}次评分无效，已跳过")
+        continue
+
+    total_score = total_score + current_score
+    valid_score_count = valid_score_count + 1
+    print(f"第{score_number}次评分已记录")
+
+print(f"有效评分数量：{valid_score_count}")
+print(f"有效评分总分：{total_score}")
+print("模型评分统计结束")

@@ -1,0 +1,10 @@
+answer_quality_scores = [0.86, 0.92, 0.78, 0.95]
+first_score = answer_quality_scores[0]
+third_score = answer_quality_scores[2]
+last_score = answer_quality_scores[-1]
+
+print(first_score)
+print(third_score)
+print(last_score)
+print(type(answer_quality_scores))
+print(type(first_score))

@@ -1,0 +1,6 @@
+#   len() 获取列表长度
+supported_models = ["qwen", "glm", "deepseek", "gpt"]
+
+model_count = len(supported_models)
+
+print(model_count)

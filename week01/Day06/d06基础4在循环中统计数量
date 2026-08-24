@@ -1,0 +1,30 @@
+"""
+在循环中统计数量
+目标:
+不只输出每次处理结果，还要统计一共有多少份文档解析成功。
+这需要使用一个计数变量。
+
+基本结构:
+successful_count = 0 #为什么先写 successful_count = 0,循环开始前，还没有处理任何文档，所以成功数量是：successful_count = 0
+
+for ...:
+    if 条件成立:
+        successful_count = successful_count + 1
+"""
+# 示例：统计解析成功数量
+# successful_count：解析成功的文档数量
+successful_count = 0
+
+for document_number in range(1, 4):
+    parsing_is_successful = int(
+        input(f"第{document_number}份文档是否解析成功？请输入1或0：")
+    )
+
+    if parsing_is_successful == 1:
+        print(f"第{document_number}份文档解析成功")
+        successful_count = successful_count + 1
+    else:
+        print(f"第{document_number}份文档解析失败")
+
+print(f"解析成功的文档数量：{successful_count}")
+print("文档解析检查结束")

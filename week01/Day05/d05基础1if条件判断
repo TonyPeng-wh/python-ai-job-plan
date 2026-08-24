@@ -1,0 +1,36 @@
+"""
+1. 学习目标
+
+理解下面的代码：
+
+if 条件:
+    条件成立时执行的代码
+
+当条件结果是 True 时，缩进的代码才会运行；条件是 False 时，缩进的代码会被跳过
+
+2. 基本语法
+retrieval_score = 0.7
+
+if retrieval_score < 0.75:
+    print("检索分数偏低，需要重试")
+
+3. if 的三个关键部分
+a.if表示“如果”。
+b.条件后面必须写冒号：
+if retrieval_score < 0.75:
+c.属于 if 的代码必须向右缩进：VS Code 通常会在按下回车后自动缩进四个空格。
+    print("检索分数偏低，需要重试")
+
+"""
+
+#   用户输入本次 RAG 检索分数
+retrieval_score = float(input("请输入检索分数："))
+
+#   检索合格线 
+quality_threshold = 0.75
+
+#   判断检索结果是否合格
+if retrieval_score >= quality_threshold:
+    print("合格")
+   
+print("结束")

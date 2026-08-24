@@ -1,0 +1,20 @@
+"""
+第四组：纠错题
+name = TonyPeng
+weekly hours = 20
+is_learning = "True"
+
+print("我的名字是{name}")
+print(type(weekly_hours)
+
+目标是让它正确输出：
+我的名字是TonyPeng
+每周学习20小时
+是否正在学习：True
+"""
+name = "TonyPeng"
+weekly_hours = 20
+is_learning = True      #bool不能打""否则是str
+print(f"我的名字是{name}")
+print(f"每周学习{weekly_hours}小时。")
+print(f"是否正在学习:{is_learning}")

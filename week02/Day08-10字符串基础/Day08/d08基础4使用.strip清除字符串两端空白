@@ -1,0 +1,34 @@
+"""
+基本语法
+处理后的字符串 = 原字符串.strip()
+
+.strip() 会清除字符串两端的：
+
+空格
+换行
+制表符等空白字符
+
+但不会删除文字中间的空格。
+"""
+
+# 例如：
+
+# original_text = "   电池无法充电   "
+# cleaned_text = original_text.strip()
+
+# print(cleaned_text)
+# 电池无法充电
+
+# 工作场景：清理用户问题
+# original_query：用户原始输入的问题
+original_query = input("请输入问题：")
+
+# cleaned_query：清除两端空白后的问题
+cleaned_query = original_query.strip()
+
+print(f"清理后的问题：{cleaned_query}")
+
+if len(cleaned_query) == 0:
+    print("问题不能为空")
+else:
+    print("问题可以提交检索")

@@ -1,0 +1,26 @@
+"""
+1. 基本语法
+新字符串 = 原字符串[开始位置:结束位置]
+
+核心规则：
+
+包含开始位置
+不包含结束位置
+"""
+
+# document_code = "RAG-2026-015"
+# document_prefix = document_code[0:3]
+
+# print(document_prefix)
+
+
+# employee_code：完整员工编号
+employee_code = input("请输入员工编号：").strip()
+
+if len(employee_code) >= 2:
+    # department_code：员工编号前两个字符
+    department_code = employee_code[0:2]
+
+    print(f"部门代码：{department_code}")
+else:
+    print("员工编号长度不足")

@@ -1,0 +1,14 @@
+#   逻辑运算符 not
+
+# api_status：API 状态
+api_status = input("请输入 API 状态：")
+
+# model_call_succeeded：模型调用是否成功
+model_call_succeeded = api_status == "ok"
+
+# model_call_failed：模型调用是否失败
+# not 会把成功状态取反
+model_call_failed = not model_call_succeeded
+
+print(f"模型调用是否成功：{model_call_succeeded}")
+print(f"模型调用是否失败：{model_call_failed}")

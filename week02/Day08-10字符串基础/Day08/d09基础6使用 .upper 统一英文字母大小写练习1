@@ -1,0 +1,8 @@
+#   original_warehouse_code：输入原始仓库编码
+original_warehouse_code = input("用户输入仓库编码：")
+
+#   normalized_warehouse_code：标准化后的仓库编码
+normalized_warehouse_code = original_warehouse_code.upper()
+
+print(f"原始仓库编码：{original_warehouse_code}")
+print(f"标准化仓库编码：{normalized_warehouse_code}")

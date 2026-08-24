@@ -1,0 +1,134 @@
+# raw_tag_text = "rag,timeout,network,timeout"
+# tag_categories = raw_tag_text.strip().lower().split(",")
+# print(tag_categories)
+
+# tag_count = len(tag_categories)
+# timeout_count = tag_categories.count("timeout")
+# network_count = tag_categories.count("network")
+# print(tag_count)
+# print(timeout_count)
+# print(network_count)
+
+# tag_exists = "network" in tag_categories
+# if tag_exists:
+#     tag_index = tag_categories.index("network")
+#     print(tag_index)
+# else:
+#     print("tag不存在")
+
+# tag_categories[0] = "knowledge_base"
+# print(tag_categories)
+
+# new_tag1 = "retry"
+# new_tag2 = "api"
+# new_tags = ["auth", "cache"]
+# tag_categories.append(new_tag1)
+# tag_categories.insert(1, new_tag2)
+# tag_categories.extend(new_tags)
+# print(tag_categories)
+
+# tag_exists = "network" in tag_categories
+# if tag_exists:
+#     tag_categories.remove("network")
+#     print(tag_categories)
+#     removed_tag = tag_categories.pop()
+#     print(f"被撤销的标签：{removed_tag}")
+# else:
+#     print("tag不存在")
+
+# for current_tag in tag_categories:
+#     print(f"当前标签：{current_tag}")
+
+# tag_categories.sort()
+# print(tag_categories)
+# tag_categories.reverse()
+# print(tag_categories)
+
+# final_tag_text = " | ".join(tag_categories)
+# print(final_tag_text)
+
+
+raw_tag_text = "rag,timeout,network,timeout"
+
+tag_categories = raw_tag_text.strip().lower().split(",")
+
+print(tag_categories)
+
+
+# 标签总数量
+tag_count = len(tag_categories)
+
+# timeout 出现次数
+timeout_count = tag_categories.count("timeout")
+
+# network 是否存在
+network_exists = "network" in tag_categories
+
+print(tag_count)
+print(timeout_count)
+print(network_exists)
+
+
+# 查找 network 第一次出现的位置
+if network_exists:
+    network_index = tag_categories.index("network")
+    print(network_index)
+else:
+    print("network 标签不存在")
+
+
+# 修改第一个标签
+tag_categories[0] = "knowledge_base"
+
+print(tag_categories)
+
+
+# 添加标签
+new_tag1 = "retry"
+new_tag2 = "api"
+new_tags = ["auth", "cache"]
+
+tag_categories.append(new_tag1)
+tag_categories.insert(1, new_tag2)
+tag_categories.extend(new_tags)
+
+print(tag_categories)
+
+
+# 删除 network 标签
+network_exists = "network" in tag_categories
+
+if network_exists:
+    tag_categories.remove("network")
+    print(tag_categories)
+else:
+    print("network 标签不存在")
+
+
+# 删除最后一个标签，并保存被删除元素
+removed_tag = tag_categories.pop()
+
+print(f"被撤销的标签：{removed_tag}")
+
+
+# 遍历当前标签
+for current_tag in tag_categories:
+    print(f"当前标签：{current_tag}")
+
+
+# 排序
+tag_categories.sort()
+
+print(tag_categories)
+
+
+# 反转当前顺序
+tag_categories.reverse()
+
+print(tag_categories)
+
+
+# 列表重新转成字符串
+final_tag_text = " | ".join(tag_categories)
+
+print(f"最终标签文本：{final_tag_text}")

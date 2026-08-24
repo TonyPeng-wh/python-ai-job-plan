@@ -1,0 +1,38 @@
+#   AI 模型接入名单维护
+supported_models = ["qwen", "deepseek", "gpt", "glm"]
+new_models = ["mistral", "gemma"]
+
+model_gpt_exists = "gpt" in supported_models
+if model_gpt_exists:
+    supported_models.remove("gpt")
+else:
+    print("模型不存在")
+
+model_llama_exists = "llama" in supported_models
+if model_llama_exists:
+    print("模型存在")
+else:
+    supported_models.append("llama")
+
+supported_models.insert(1, "kimi")
+
+supported_models.extend(new_models)
+
+models_count = len(supported_models)
+print(models_count)
+
+model_deepseek_exists = "deepseek" in supported_models
+print(model_deepseek_exists)
+
+model_glm_exists = "glm" in supported_models
+if model_glm_exists:
+    glm_index = supported_models.index("glm")
+    print(glm_index)
+else:
+    print("glm 模型不存在")
+
+for current_model in supported_models:
+    print(f"当前模型:{current_model}")
+
+final_model_text = " | ".join(supported_models)
+print(final_model_text)

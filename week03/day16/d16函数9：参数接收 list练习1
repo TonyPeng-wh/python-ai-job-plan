@@ -1,0 +1,14 @@
+def show_feedback_categories(categories):
+    for current_category in categories:
+        print(f"反馈类型：{current_category}")
+
+
+feedback_categories = ["回答错误", "检索失败", "格式问题"]
+
+show_feedback_categories(feedback_categories)
+"""
+完整输出是什么？
+回答错误
+检索失败
+格式问题
+"""

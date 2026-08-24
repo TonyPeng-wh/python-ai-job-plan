@@ -1,0 +1,49 @@
+"""
+知识点：列表是什么，以及如何创建列表
+1.列表可以让一个变量保存多条数据。
+retrieval_scores = [0.82, 0.91, 0.76]
+retrieval_scores
+      ↓
+整个列表
+      ↓
+[0.82, 0.91, 0.76]
+   ↓     ↓     ↓
+ 元素   元素   元素
+
+列表最明显的特征是：[]
+基本写法：变量名 = [元素1, 元素2, 元素3]///注意元素之间使用：,
+
+这个变量的数据类型是什么？
+list
+
+retrieval_scores
+→ list
+列表里面的 0.82
+→ float
+
+"""
+
+retrieval_scores = [0.82, 0.91, 0.76]
+
+print(type(retrieval_scores))
+
+#列表不仅能保存数字
+document_titles = [
+    "电池故障诊断指南",
+    "充电系统维修手册",
+    "车辆报警码说明"
+]
+print(type(document_titles))
+
+#空列表
+retrieval_results = []#虽然里面没有元素，但是依然是一个list
+print(type(retrieval_results))
+
+
+model_names = ["qwen", "deepseek", "gpt"]
+
+print(model_names)
+print(type(model_names))
+print(model_names[0])
+print(model_names[1])
+print(model_names[2])

@@ -1,0 +1,17 @@
+#   使用 .isdigit() 判断字符串是否全部由数字组成
+#   基本语法：判断结果 = 字符串.isdigit()
+#   返回类型是：bool
+
+
+# customer_code：用户输入并清理后的客户编号
+customer_code = input("请输入客户编号：").strip()
+
+# customer_code_is_numeric：客户编号是否全部由数字组成
+customer_code_is_numeric = customer_code.isdigit()
+
+print(f"客户编号是否全部为数字：{customer_code_is_numeric}")
+
+if customer_code_is_numeric:
+    print("客户编号格式正确")
+else:
+    print("客户编号只能包含数字")

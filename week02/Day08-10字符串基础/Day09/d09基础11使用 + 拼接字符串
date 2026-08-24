@@ -1,0 +1,55 @@
+"""
+把多个字符串组合成一个新的字符串。
+
+基本语法：
+
+new_text = text_one + text_two
+
+这里的 + 不是数字加法，而是把字符串首尾连接。
+"""
+
+# first_text = "深圳"
+# second_text = "AI应用工程师"
+
+# job_target = first_text + second_text
+
+# print(job_target)
+
+
+# product_name：用户输入的产品名称
+product_name = input("请输入产品名称：").strip()
+
+# fault_description：用户输入的故障现象
+fault_description = input("请输入故障现象：").strip()
+
+# retrieval_query：组合后的知识库检索问题
+retrieval_query = product_name + " " + fault_description
+
+print(f"生成的检索问题：{retrieval_query}")
+
+
+
+"""
+字符串不能直接和整数拼接
+
+错误：
+
+document_count = 5
+message = "文档数量：" + document_count
+
+字符串和整数不能直接使用 +，会出现 TypeError。
+
+可以先转换：
+
+message = "文档数量：" + str(document_count)
+
+不过你已经学过 f-string，实际代码更推荐：
+
+message = f"文档数量：{document_count}"
+
+因此：
+
+字符串和字符串组合 → 可以使用 +
+字符串中插入数字 → 优先使用 f-string
+"""
+

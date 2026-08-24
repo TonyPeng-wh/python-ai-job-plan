@@ -1,0 +1,18 @@
+"""
+独立练习：标准化模型标签
+模型输出标签可能是：
+退款|物流延迟|商品破损
+要求将 | 替换成中文顿号 、。
+使用变量：
+original_label_text
+normalized_label_text
+"""
+
+#   original_label_text:原始模型标签
+original_label_text = input("请输入原始模型标签：")
+
+#   normalized_label_text:标准化后的模型标签
+normalized_label_text = original_label_text.replace("|", "、")
+
+print(f"原始模型标签为:{original_label_text}")
+print(f"标准化后的标签为:{normalized_label_text}")

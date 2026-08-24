@@ -1,0 +1,29 @@
+"""
+d09基础10连续使用多个字符串方法
+实际工作中的文本通常需要经过多步处理，例如：
+先清除两端空格
+→ 再统一大小写
+→ 再替换不规范符号
+多个字符串方法可以连续写：
+处理后的字符串 = 原字符串.strip().lower().replace("旧内容", "新内容")
+Python 会从左向右执行。
+"""
+
+# original_model_status：原始模型运行状态
+original_model_status = input("请输入模型运行状态：")
+
+# normalized_model_status：清理并标准化后的模型状态
+normalized_model_status = (
+    original_model_status
+    .strip()    #清除两端空白后的状态
+    .lower()    #转换为小写后的状态
+    .replace("-", "_")  #替换分隔符后的最终状态
+)
+
+print(f"原始模型状态：{original_model_status}")
+print(f"标准化模型状态：{normalized_model_status}")
+
+if normalized_model_status == "api_success":
+    print("模型接口调用成功")
+else:
+    print("模型状态不是api_success")

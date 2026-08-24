@@ -1,0 +1,38 @@
+#   字典 dict ⑦：删除键值对 pop()
+#   字典里的 pop() 和你之前学过的列表 pop() 有点像：都会删除数据，并且可以把被删除的内容返回出来。
+#   不过区别在于：
+# 
+# list.pop()
+# → 按索引删除元素
+
+# dict.pop()
+# → 按 key 删除键值对
+ticket_info = {
+    "ticket_id": "TKT-001",
+    "category": "超时故障",
+    "priority": "HIGH"
+}
+
+removed_priority = ticket_info.pop("priority")
+
+print(ticket_info)
+print(removed_priority)
+
+#   dict.pop() 返回的是被删除 key 对应的 value。
+#   字典 pop() 用 key 删除键值对，并返回被删除的 value。
+
+# key 不存在时怎么办？
+status_exists = "status" in ticket_info
+
+if status_exists:
+    removed_status = ticket_info.pop("status")
+    print(f"被删除的状态：{removed_status}")
+else:
+    print("status 字段不存在")
+
+# 和列表 pop() 对比
+# list.pop(索引)
+# → 按位置删除
+
+# dict.pop("key")
+# → 按 key 删除

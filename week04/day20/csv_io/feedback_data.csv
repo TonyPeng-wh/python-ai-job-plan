@@ -1,0 +1,5 @@
+feedback_id,category,processed,priority
+F001,回答错误,False,HIGH
+F002,格式问题,True,LOW
+F003,检索失败,False,HIGH
+F004,回答错误,False,MEDIUM

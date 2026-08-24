@@ -1,0 +1,12 @@
+#   contract_text:用户输入的合同文本
+contract_text = input("请输入合同文本：")
+
+#   payment_term_position:付款期限第一次出现的位置
+payment_term_position = contract_text.find("付款期限")
+
+print(f"“付款期限”第一次出现的位置是{payment_term_position}")
+
+if payment_term_position == -1:
+    print("未发现付款期限条款")
+else:
+    print("发现付款期限条款")

@@ -1,0 +1,18 @@
+#   字符串重复 *
+#   字符串乘以整数，表示重复多次：
+#   repeated_text = text * repeat_count
+
+
+
+# separator_character：分隔线使用的字符
+separator_character = "="
+
+# separator_length：分隔线长度
+separator_length = 20
+
+# report_separator：生成的报告分隔线
+report_separator = separator_character * separator_length
+
+print(report_separator)
+print("模型回答质量报告")
+print(report_separator)

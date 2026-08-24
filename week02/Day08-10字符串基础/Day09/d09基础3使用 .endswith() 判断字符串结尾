@@ -1,0 +1,18 @@
+# 判断结果 = 字符串.endswith("指定内容")
+
+# original_file_name：用户输入的原始文件名
+original_file_name = input("请输入知识库文件名：")
+
+# normalized_file_name：清除空白并转为小写后的文件名
+normalized_file_name = original_file_name.strip().lower()
+
+# markdown_file_is_found：文件名是否以.md结尾
+markdown_file_is_found = normalized_file_name.endswith(".md")
+
+print(f"标准化后的文件名：{normalized_file_name}")
+print(f"是否为Markdown文件：{markdown_file_is_found}")
+
+if markdown_file_is_found:
+    print("文件格式符合知识库导入要求")
+else:
+    print("文件格式不符合要求")

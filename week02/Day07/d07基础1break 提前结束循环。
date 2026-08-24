@@ -1,0 +1,42 @@
+"""
+break 的作用
+break 表示：
+立即结束当前循环，不再执行后面的循环次数。
+基本结构：
+for 循环变量 in range(...):
+    if 结束条件:
+        break
+
+注意：break 只能写在循环内部。
+
+工作场景：模型接口失败重试
+调用大模型接口时，可能因为网络波动暂时失败。系统可以设置最多尝试 3 次：
+当前调用成功：停止重试
+当前调用失败：继续下一次
+最多尝试三次
+真实系统还需要处理超时、错误码和等待间隔。当前练习使用 1 和 0 模拟调用结果。
+"""
+
+# request_succeeded：模型接口是否最终调用成功
+request_succeeded = False
+
+# attempt_number：当前调用尝试编号
+for attempt_number in range(1, 4):
+    # request_is_successful：当前这次调用是否成功
+    request_is_successful = int(
+        input(f"第{attempt_number}次模型接口调用是否成功？请输入1或0：")
+    )
+
+    if request_is_successful == 1:
+        request_succeeded = True
+        print(f"第{attempt_number}次调用成功")
+        break
+    else:
+        print(f"第{attempt_number}次调用失败")
+
+if request_succeeded:
+    print("模型接口调用完成")
+else:
+    print("三次调用均失败，需要人工检查")
+
+print("接口重试流程结束")

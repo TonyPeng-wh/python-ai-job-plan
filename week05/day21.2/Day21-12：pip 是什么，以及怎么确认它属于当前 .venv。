@@ -1,0 +1,10 @@
+# Day21-12：pip 是什么，以及怎么确认它属于当前 .venv。
+pip 是给当前 Python 环境安装和管理第三方库的工具。
+你前面用的：
+import csv
+import json
+都是 Python 标准库，不需要自己安装。
+======
+但以后会用到：
+import requests
+requests 是第三方库，一般需要先通过 pip 安装。

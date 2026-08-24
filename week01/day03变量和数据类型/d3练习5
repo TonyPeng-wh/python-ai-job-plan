@@ -1,0 +1,19 @@
+"""
+===变量重新赋值===
+观察下面代码，并先写出你认为的输出结果：
+target_role = "Python开发工程师"
+print(target_role)
+
+target_role = "AI应用工程师"
+print(target_role)
+然后运行验证。
+再自己增加一次重新赋值：
+target_role = "RAG应用开发工程师"
+"""
+
+target_role = "Python开发工程师"
+print(target_role)
+target_role = "AI应用工程师"
+print(target_role)
+target_role = "RAG应用开发工程师"
+print(target_role)

@@ -1,0 +1,69 @@
+feedback_list = [
+    {
+        "feedback_id": "FB-001",
+        "category": "回答错误",
+        "priority": "HIGH",
+        "processed": False
+    },
+    {
+        "feedback_id": "FB-002",
+        "category": "响应慢",
+        "priority": "MEDIUM",
+        "processed": True
+    },
+    {
+        "feedback_id": "FB-003",
+        "category": "回答错误",
+        "priority": "HIGH",
+        "processed": False
+    },
+    {
+        "feedback_id": "FB-004",
+        "category": "知识缺失",
+        "priority": "LOW",
+        "processed": True
+    },
+    {
+        "feedback_id": "FB-005",
+        "category": "响应慢",
+        "priority": "HIGH",
+        "processed": False
+    }
+]
+# ① 输出反馈总数
+feedback_count = len(feedback_list)
+print(f"反馈总数：{feedback_count}")
+
+# 统计回答错误数量：2
+answer_error_count = 0
+for current_feedback in feedback_list:
+    if current_feedback["category"] == "回答错误":
+        answer_error_count = answer_error_count + 1
+
+print(f"回答错误数量：{answer_error_count}")
+
+# ③ 统计还没有处理的反馈
+unprocessed_feedback_count = 0
+for current_feedback in feedback_list:
+    if current_feedback["processed"] == False:
+        unprocessed_feedback_count = unprocessed_feedback_count + 1
+print(f"未处理反馈数量：{unprocessed_feedback_count}")
+
+# ④ 输出所有 HIGH 优先级反馈编号
+for current_feedback in feedback_list:
+    priority = current_feedback["priority"]
+    if priority == "HIGH":
+        feedback_id = current_feedback["feedback_id"]
+        print(f"高优先级反馈：{feedback_id}")
+
+# ⑤ 给每条反馈增加一个新字段
+for current_feedback in feedback_list:
+    processed = current_feedback["processed"]
+    if processed == True:
+        current_feedback["review_status"] = "completed"
+    else:
+        current_feedback["review_status"] = "pending"
+# ⑥ 输出最终所有反馈的所有字段
+for current_feedback in feedback_list:
+    for current_key, current_value in current_feedback.items():
+        print(f"{current_key}:{current_value}")

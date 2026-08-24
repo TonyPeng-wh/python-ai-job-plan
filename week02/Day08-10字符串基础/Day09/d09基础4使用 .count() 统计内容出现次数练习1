@@ -1,0 +1,15 @@
+#   original_log：原始模型日志
+original_log = input("请输入原始模型日志：")
+
+#   normalized_log：校准后的模型日志
+normalized_log = original_log.lower()
+
+#timeout_keyword_count：timeout出现次数
+timeout_keyword_count = normalized_log.count("timeout")
+
+print(f"“timeout”出现次数为{timeout_keyword_count}")
+
+if timeout_keyword_count > 0:
+    print("日志中存在接口超时")
+else:
+    print("日志中未发现接口超时")

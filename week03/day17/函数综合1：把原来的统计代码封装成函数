@@ -1,0 +1,89 @@
+"""
+函数综合①：把原来的统计代码封装成函数
+这一节只学一个点：
+把以前直接写在外面的统计逻辑，放进函数里。
+"""
+# 你以前会这样写：
+feedback_list = [
+    {"category": "回答错误"},
+    {"category": "检索失败"},
+    {"category": "回答错误"}
+]
+
+answer_error_count = 0
+
+for current_feedback in feedback_list:
+    if current_feedback["category"] == "回答错误":
+        answer_error_count = answer_error_count + 1
+
+print(f"回答错误数量：{answer_error_count}")
+
+# 这段代码没问题。
+# 现在把“统计回答错误数量”这个功能单独拿出来：
+feedback_list = [
+    {"category": "回答错误"},
+    {"category": "检索失败"},
+    {"category": "回答错误"}
+]
+
+def count_answer_errors(feedbacks):
+    answer_error_count = 0
+
+    for current_feedback in feedbacks:
+        if current_feedback["category"] == "回答错误":
+            answer_error_count = answer_error_count + 1
+
+    return answer_error_count
+
+result = count_answer_errors(feedback_list)
+
+print(f"回答错误数量：{result}")
+
+"""
+为什么要这样写？
+原来：
+统计逻辑全部写在外面
+现在：
+count_answer_errors()
+→ 专门负责统计回答错误
+以后需要统计时，只要：
+result = count_answer_errors(feedback_list)
+不需要每次重新写一整套：
+answer_error_count = 0
+for ...
+    if ...
+        count += 1
+这就是函数开始真正用于“整理代码”。
+"""
+
+def count_high_priority(feedbacks):
+    high_count = 0
+
+    for current_feedback in feedbacks:
+        if current_feedback["priority"] == "HIGH":
+            high_count = high_count + 1
+
+    return high_count
+
+
+feedback_list = [
+    {"category": "回答错误", "priority": "HIGH"},
+    {"category": "检索失败", "priority": "LOW"},
+    {"category": "格式问题", "priority": "HIGH"}
+]
+
+result = count_high_priority(feedback_list)
+
+print(f"HIGH 优先级数量：{result}")
+
+"""
+回答：
+① feedbacks 是什么数据类型？
+list
+② current_feedback 是什么数据类型？
+dict
+③ result 最终是多少？
+2
+④ 完整输出是什么？
+HIGH 优先级数量：2
+"""

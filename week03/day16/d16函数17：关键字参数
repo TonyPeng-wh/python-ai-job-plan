@@ -1,0 +1,17 @@
+"""
+d16函数17：关键字参数
+目标
+这一节只学：
+调用函数时，可以直接写清楚“这个值传给哪个参数”。
+"""
+def show_feedback(category, priority):
+    print(f"反馈类型：{category}")
+    print(f"优先级：{priority}")
+
+show_feedback(category="回答错误", priority="HIGH")
+"""
+category="回答错误"
+priority="HIGH"
+这种写法叫：关键字参数
+最大的特点是：因为已经写清楚参数名，所以顺序可以交换。
+"""

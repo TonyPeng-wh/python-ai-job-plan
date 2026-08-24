@@ -1,0 +1,45 @@
+# 字典 dict ⑨：keys()、values()、items()这三个方法都是用来查看字典里的不同部分。
+
+model_result = {
+    "model_name": "deepseek",
+    "quality_score": 0.91,
+    "request_succeeded": True
+}
+
+"""
+key                    value
+
+"model_name"           "deepseek"
+"quality_score"        0.91
+"request_succeeded"    True
+
+keys()    → 我要所有 key
+values()  → 我要所有 value
+items()   → 我要所有 key 和 value
+
+
+"""
+
+model_keys = model_result.keys()  # 把这个字典里的所有字段名称拿出来。
+print(model_keys)
+
+# 2. values()：查看所有 value
+model_values = model_result.values()
+print(model_values)
+
+# 3. items()：同时查看 key 和 value
+model_items = model_result.items()
+print(model_items)
+
+"""
+为什么后面遍历字典会用到它们？
+for key in model_result.keys():
+    print(key)
+逐个得到 key。value,key和value一样
+
+#同时得到当前的 key 和 value。
+for key, value in model_result.items():
+
+
+
+"""

@@ -1,0 +1,29 @@
+def ticket_needs_review(priority):
+    return priority == "HIGH"
+
+
+def get_review_status(priority):
+    if priority == "HIGH":
+        return "需要复核"
+    else:
+        return "正常处理"
+
+
+current_priority = "HIGH"
+
+needs_review = ticket_needs_review(current_priority)
+review_status = get_review_status(current_priority)
+
+print(needs_review)
+print(review_status)
+
+"""
+回答：
+① needs_review 最终是什么值？
+needs_review = True
+② review_status 最终是什么值？
+review_status = "需要复核"
+③ 完整输出是什么？
+True
+需要复核
+"""

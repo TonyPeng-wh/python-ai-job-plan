@@ -1,0 +1,11 @@
+"""
+这一节只学：
+定义函数时，可以提前给参数准备一个默认值。
+"""
+# 例如 AI 工单默认优先级是 "MEDIUM"：
+def show_ticket_priority(priority="MEDIUM"):  # 如果调用函数时没有传 priority，就使用 "MEDIUM"。
+    print(f"工单优先级：{priority}")
+
+show_ticket_priority()
+# 没传值 → 使用默认值
+# 传了值 → 使用传进来的值

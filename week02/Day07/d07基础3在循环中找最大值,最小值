@@ -1,0 +1,32 @@
+"""
+#   highest_score:目前为止发现的最高评分
+highest_score = 0
+
+#   score_number:当前评分编号
+for score_number in range(1, 6):
+
+    #current_score:当前输入的评分
+    current_score = int(
+        input(f"请输入第{score_number}次评分:")
+    )
+
+    if current_score > highest_score:
+        highest_score = current_score
+
+print(f"模型回答最高评分：{highest_score}")
+
+"""
+
+# lowest_score：目前发现的最低评分
+lowest_score = 100
+# score_number当前评分编号
+for score_number in range(1, 6):
+    # current_score当前输入的评分
+    current_score = int(
+        input(f"请输入第{score_number}次评分:")
+    )
+
+    if current_score < lowest_score:
+        lowest_score = current_score
+
+print(f"模型回答最低评分：{lowest_score}")

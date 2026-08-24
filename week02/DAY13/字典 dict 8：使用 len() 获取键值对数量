@@ -1,0 +1,24 @@
+# 字典 dict ⑧：使用 len() 获取键值对数量
+
+
+ticket_info = {
+    "ticket_id": "TKT-001",
+    "category": "超时故障",
+    "priority": "HIGH"
+}
+
+field_count = len(ticket_info)
+
+print(field_count)
+
+"""
+len(str)
+→ 字符数量
+
+len(list)
+→ 元素数量
+
+len(dict)
+→ 键值对数量
+"""
+

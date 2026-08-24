@@ -1,0 +1,22 @@
+[
+    {
+        "ticket_id": "T001",
+        "priority": "HIGH",
+        "processed": false
+    },
+    {
+        "ticket_id": "T002",
+        "priority": "LOW",
+        "processed": false
+    },
+    {
+        "ticket_id": "T003",
+        "priority": "HIGH",
+        "processed": true
+    },
+    {
+        "ticket_id": "T004",
+        "priority": "MEDIUM",
+        "processed": false
+    }
+]

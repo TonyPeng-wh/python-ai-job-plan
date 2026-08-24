@@ -1,0 +1,28 @@
+"""
+练习4：判断数据类型
+
+不要运行代码，先自己判断每个数据是什么类型：
+a = 100     
+b = "100"
+c = 100.0
+d = True
+e = "True"
+f = ""
+g = -20
+"""
+
+a = 100         #int   
+b = "100"       #str
+c = 100.0       #float
+d = True        #bool
+e = "True"      #str
+f = ""          #str
+g = -20         #int
+
+print(type(a))
+print(type(b))
+print(type(c))
+print(type(d))
+print(type(e))
+print(type(f))
+print(type(g))

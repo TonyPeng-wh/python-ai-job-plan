@@ -1,0 +1,20 @@
+[
+    {
+        "ticket_id": "FT001",
+        "fault_type": "动力电池故障",
+        "severity": "HIGH",
+        "reported": false
+    },
+    {
+        "ticket_id": "FT002",
+        "fault_type": "中控屏异常",
+        "severity": "LOW",
+        "reported": false
+    },
+    {
+        "ticket_id": "FT003",
+        "fault_type": "制动系统故障",
+        "severity": "HIGH",
+        "reported": true
+    }
+]

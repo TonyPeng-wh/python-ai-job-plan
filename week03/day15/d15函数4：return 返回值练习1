@@ -1,0 +1,12 @@
+def check_answer_score(answer_score):
+    if answer_score >= 0.8:
+        return "合格"
+    else:
+        return "需要复核"
+
+
+current_score = 0.72
+
+review_result = check_answer_score(current_score)
+
+print(f"回答检查结果：{review_result}")

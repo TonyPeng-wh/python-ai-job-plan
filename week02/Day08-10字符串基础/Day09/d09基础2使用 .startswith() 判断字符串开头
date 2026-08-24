@@ -1,0 +1,23 @@
+"""
+使用 .startswith() 判断字符串开头
+基本语法：判断结果 = 字符串.startswith("指定内容")
+返回的数据类型是：bool
+"""
+
+# original_log：用户输入的原始系统日志
+original_log = input("请输入系统日志：")
+
+# normalized_log：去除两端空白并转换为大写后的日志
+normalized_log = original_log.strip().upper()
+
+# error_prefix_is_found：日志是否以ERROR开头
+error_prefix_is_found = normalized_log.startswith("ERROR")
+
+print(f"标准化后的日志：{normalized_log}")
+print(f"是否以ERROR开头：{error_prefix_is_found}")
+
+if error_prefix_is_found:
+    print("检测到错误日志")
+else:
+    print("当前不是ERROR级别日志")
+

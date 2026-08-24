@@ -1,0 +1,43 @@
+"""
+独立练习：统计文档页数
+
+系统处理了 4 份企业文档，需要统计文档总页数。
+
+变量：
+
+total_page_count
+document_number
+page_count
+
+含义：
+
+total_page_count：累计文档页数，初始值为 0
+document_number：当前文档编号，依次为 1、2、3、4
+page_count：当前文档的页数
+
+程序要求：
+
+请输入第1份文档的页数：
+请输入第2份文档的页数：
+请输入第3份文档的页数：
+请输入第4份文档的页数：
+
+最后输出：
+
+四份文档的总页数：数量
+文档页数统计结束
+"""
+
+#total_page_count:累计文档页数
+total_page_count = 0
+
+#document_number:当前文档编号
+for document_number in range(1, 5):
+    page_count = int(
+        input(f"请输入第{document_number}份文档的页数：")
+        )
+
+    total_page_count = total_page_count + page_count
+
+print(f"四份文档的总页数：{total_page_count}")
+print("文档页数统计结束")

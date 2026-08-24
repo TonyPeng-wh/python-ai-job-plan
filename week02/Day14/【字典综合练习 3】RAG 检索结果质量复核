@@ -1,0 +1,67 @@
+# 【字典综合练习 3】RAG 检索结果质量复核
+retrieval_results = [
+    {
+        "document_title": "动力电池故障诊断手册",
+        "retrieval_score": 0.92,
+        "source": "维修知识库"
+    },
+    {
+        "document_title": "高压系统安全规范",
+        "retrieval_score": 0.68,
+        "source": "安全知识库"
+    },
+    {
+        "document_title": "电池热管理说明",
+        "retrieval_score": 0.81
+    },
+    {
+        "document_title": "充电故障处理指南",
+        "retrieval_score": 0.73,
+        "source": "维修知识库"
+    }
+]
+
+# 任务 1：输出检索结果总数
+result_count = len(retrieval_results)
+print(f"检索结果总数：{result_count}")
+
+# 任务 2：逐条输出标题和评分
+for current_result in retrieval_results:        # 先拿出当前这一条字典：
+    document_title = current_result["document_title"]
+    retrieval_score = current_result["retrieval_score"]
+    print(f"文档标题：{document_title}")
+    print(f"检索评分：{retrieval_score}")
+
+# 任务 3：统计低质量检索结果/任务 4：统计合格检索结果
+low_score_count = 0
+qualified_result_count = 0
+for current_result in retrieval_results:                # 先拿出当前这一条字典：
+    retrieval_score = current_result["retrieval_score"] # 变量名 = 当前字典["key"]
+
+    if retrieval_score < 0.75:
+        low_score_count = low_score_count + 1
+    else: 
+        qualified_result_count = qualified_result_count + 1
+print(f"低质量检索结果数量：{low_score_count}")
+print(f"合格检索结果数量：{qualified_result_count}")
+
+        
+# 任务 5：读取每条结果的数据来源
+for current_result in retrieval_results:
+    source = current_result.get("source", "未知来源")
+    print(f"数据来源：{source}")
+
+# 任务 6：给每条检索结果增加复核状态
+for current_result in retrieval_results:
+    retrieval_score = current_result["retrieval_score"]
+    if retrieval_score >= 0.75:
+        current_result["review_status"] = "qualified"
+    else:
+        current_result["review_status"] = "low_score"
+
+# 任务 7：输出最终全部字段
+for current_result in retrieval_results:
+    for current_key, current_value in current_result.items():
+        print(f"{current_key}:{current_value}")
+
+# 因此真正决定 current_xxx 是什么的，不是 current 这个名字，而是 `for ... in 后面的容器里面装了什么。

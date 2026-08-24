@@ -1,0 +1,26 @@
+"""
+函数⑤：return 执行后，函数会立即结束
+这一节只学一个规则：函数一旦执行到 return，这一次函数调用就结束了。
+"""
+def check_score(score):
+    if score >= 0.8:
+        return "合格"
+
+    print("继续检查")
+
+result = check_score(0.6)  # 只有真的执行到 return 时，这一次函数调用才立即结束。
+# result = check_score(0.9) 不会执行。可以把 return 理解成：“结果已经确定，把结果送出去，然后离开这个函数。”
+
+"""
+放到 AI 应用场景里
+比如检查 RAG 检索分数：
+"""
+
+def check_retrieval_score(retrieval_score):
+    if retrieval_score >= 0.75:
+        return "qualified"
+
+    print("检索分数偏低")
+    return "low_score"
+
+result = check_retrieval_score(0.6)

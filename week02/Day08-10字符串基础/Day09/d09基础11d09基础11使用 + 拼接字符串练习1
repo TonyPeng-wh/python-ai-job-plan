@@ -1,0 +1,10 @@
+#   product_name:商品名称
+product_name = input("请输入商品名称：").strip()
+
+#   customer_question:客户问题
+customer_question = input("请输入客户问题：").strip()
+
+#   search_text:检索文本
+search_text = product_name + customer_question
+
+print(f"生成的客服检索文本为：{search_text}")

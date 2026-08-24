@@ -1,0 +1,25 @@
+"""
+前面我们学了：
+list → 传给函数 → for 遍历
+现在再加上之前学过的：
+return
+"""
+# 例如统计有多少条 "回答错误"：
+def count_answer_errors(categories):
+    error_count = 0
+
+    for current_category in categories:
+        if current_category == "回答错误":
+            error_count = error_count + 1
+
+    return error_count
+
+feedback_categories = [
+    "回答错误",
+    "检索失败",
+    "回答错误",
+    "格式问题"
+]
+
+answer_error_count = count_answer_errors(feedback_categories)
+# 赋值语句先算右边，再保存到左边。如果只有右边这一部分,它是：函数调用语句

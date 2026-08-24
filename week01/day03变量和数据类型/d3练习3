@@ -1,0 +1,25 @@
+"""
+练习3：创建四种变量
+姓名：TonyPeng
+每周学习小时数：20
+每天平均学习小时数：2.9
+是否正在学习Python：True
+
+变量名分别使用：
+name
+weekly_hours
+daily_hours
+is_learning_python
+
+然后使用 type() 输出每个变量的值和类型。
+"""
+
+name = "TonyPeng"
+weekly_hours = 20
+daily_hours = 2.9
+is_learning_python = True
+
+print(type(name))
+print(type(weekly_hours))   
+print(type(daily_hours))
+print(type(is_learning_python))

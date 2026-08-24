@@ -1,0 +1,23 @@
+"""
+=== 第三组：输入和类型转换 ===
+练习6：个人信息采集
+
+让用户输入：
+
+姓名
+城市
+目标岗位
+每周学习小时数
+"""
+
+name = input("请输入姓名：")
+city = input("请输入目标城市：")
+target_role = input("请输入目标岗位:")
+weekly_hours = float(input("请输入每周学习时长："))
+
+# 使用 f-string 输出结果,print(f"固定文字{变量名}")
+#print(f"我叫{name},我要去{city},我的目标岗位是{target_role},每周学习{weekly_hours}小时")
+print(f"My name is {name}")
+print(f"My target city is {city}")
+print(f"My target role is {target_role}")
+print(f"I study Python {weekly_hours:.1f} hours weekly") #如果是小数，要在变量后用.Xf保留几位小数

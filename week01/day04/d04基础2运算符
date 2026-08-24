@@ -1,0 +1,20 @@
+"""
+=============DAY04运算符=============
+"""
+
+#一批用户问题的数量
+total_questions = 47
+
+#每批最多处理的问题数
+batch_size = 7
+
+#完整批次数
+full_batch = total_questions // batch_size
+
+#剩余问题数
+remaining_questions = total_questions % batch_size
+
+#平均每批问题
+average_question = total_questions / batch_size
+
+print(f"完整批次数为{full_batch},剩余问题数为{remaining_questions},平均每批问题为{average_question:.1f}。")

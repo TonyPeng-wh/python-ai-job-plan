@@ -1,0 +1,14 @@
+def retrieval_is_qualified(retrieval_score):
+    return retrieval_score >= 0.75
+
+
+result = retrieval_is_qualified(0.68)
+
+print(result)
+
+"""
+① result 最终是什么值？
+result = False
+② 完整输出是什么？
+False
+"""

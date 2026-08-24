@@ -1,0 +1,79 @@
+"""
+while 循环基础
+1. 学习目标
+
+while 表示：
+
+只要条件成立，就重复执行一段代码。
+
+基本结构：
+
+while 条件:
+    重复执行的代码
+
+每轮执行结束后，程序会重新检查条件：
+
+条件为 True：继续循环
+条件为 False：结束循环
+2. for 和 while 的区别
+
+for 通常用于次数已经比较明确的情况：
+
+for document_number in range(1, 5):
+    print(document_number)
+
+这里明确知道要执行四次。
+
+while 通常用于根据状态决定是否继续：
+
+while pending_task_count > 0:
+    ...
+
+这里的含义是：
+
+只要还有待处理任务，就继续处理。
+
+工作场景：处理待审核数据
+
+系统中有若干条待人工审核的数据，每处理一条，待审核数量减少一条。
+
+真实系统会从数据库或任务队列中读取数据。本练习只使用一个数字模拟待审核任务数量。
+
+3. 变量含义
+pending_review_count
+pending_review_count
+中文含义：待审核的数据数量
+数据类型：int
+保存的数据：当前还剩多少条数据没有审核
+程序作用：既作为循环条件，也会在循环中逐渐减少
+
+例如：
+
+pending_review_count = 3
+
+表示现在还有三条数据需要审核。
+
+reviewed_count
+reviewed_count
+中文含义：已经审核的数据数量
+数据类型：int
+初始值：0
+程序作用：每处理一条数据就增加 1
+
+"""
+
+# pending_review_count：待审核的数据数量
+pending_review_count = int(input("请输入待审核的数据数量："))
+
+# reviewed_count：已经审核的数据数量
+reviewed_count = 0
+
+while pending_review_count > 0:
+    reviewed_count = reviewed_count + 1
+
+    print(f"正在审核第{reviewed_count}条数据")
+
+    pending_review_count = pending_review_count - 1
+    print(f"剩余待审核数量：{pending_review_count}")
+
+print("全部数据审核完成")

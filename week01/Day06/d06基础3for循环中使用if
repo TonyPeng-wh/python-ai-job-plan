@@ -1,0 +1,27 @@
+#   for 循环中使用 if，对每一条数据重复执行相同的条件判断。
+# 基本结构：
+# for 循环变量 in range(...):
+#     if 条件:
+#         条件成立时执行
+#     else:
+#         条件不成立时执行
+# 这里的执行关系是：
+# for 取出一个编号
+# → 执行一次 if 判断
+# → for 取出下一个编号
+# → 再执行一次 if 判断
+
+
+#工作场景：批量检查接口调用结果
+#系统连续检查 4 次接口调用。
+for request_number in range(1, 5):
+    request_is_successful = int(
+        input(f"第{request_number}次接口调用是否成功？请输入1或0：")
+    )
+
+    if request_is_successful == 1:
+        print(f"第{request_number}次接口调用成功")
+    else:
+        print(f"第{request_number}次接口调用失败")
+
+print("全部接口调用检查结束")

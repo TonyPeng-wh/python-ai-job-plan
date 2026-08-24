@@ -1,0 +1,44 @@
+"""
+使用 .lower() 统一英文字母大小写
+
+工作场景：模型运行日志检查
+系统日志中可能出现：
+ERROR
+Error
+error
+这三种写法大小写不同，但含义相同。可以先统一转换为小写：
+cleaned_log = original_log.lower()
+
+变量含义
+original_log
+含义：用户输入的原始日志
+类型：str
+可能包含不同大小写
+
+normalized_log
+含义：统一转换为小写后的日志
+类型：str
+
+error_keyword_is_found
+含义：日志中是否包含 error
+类型：bool
+
+"""
+
+
+# 例题
+# original_log：用户输入的原始日志
+original_log = input("请输入模型运行日志：")
+
+# normalized_log：统一转换为小写后的日志
+normalized_log = original_log.lower()
+
+# error_keyword_is_found：是否发现错误关键词
+error_keyword_is_found = "error" in normalized_log
+
+print(f"标准化后的日志：{normalized_log}")
+
+if error_keyword_is_found:
+    print("发现模型运行错误")
+else:
+    print("未发现错误关键词")

@@ -1,0 +1,25 @@
+#   字符串由一个个字符组成，所以可以使用 for 每次取出一个字符。
+#   基本语法：
+#   for character in text:
+#       print(character)
+
+# model_name：模型名称
+model_name = "GPT5"
+
+# current_character：当前遍历到的字符
+for current_character in model_name:
+    print(current_character)
+
+
+# device_code：设备编码
+device_code = input("请输入设备编码：").strip()
+
+# digit_character_count：累计数字字符数量
+digit_character_count = 0
+
+# current_character：当前检查的字符
+for current_character in device_code:
+    if current_character.isdigit():
+        digit_character_count = digit_character_count + 1
+
+print(f"数字字符数量：{digit_character_count}")

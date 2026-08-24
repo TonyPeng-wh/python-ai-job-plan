@@ -1,0 +1,16 @@
+def show_review_status(status="待处理"):
+    print(f"复核状态：{status}")
+
+
+show_review_status()
+show_review_status("已完成")
+
+"""
+回答：
+① 第一次调用使用什么值？
+复核状态：待处理
+② 第二次调用使用什么值？
+复核状态：已完成
+③ 完整输出是什么？
+复核状态：已完成
+"""

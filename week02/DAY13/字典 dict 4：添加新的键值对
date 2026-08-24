@@ -1,0 +1,12 @@
+#   字典 dict ④：添加新的键值对
+#   修改已有 key 和新增 key，写法完全一样。
+ticket_info = {
+    "ticket_id": "TKT-001",
+    "category": "超时故障"
+}
+ticket_info["priority"] = "HIGH"    #如果key存在就是修改，不存在就是添加
+print(ticket_info)
+
+#这一节最重要的一句话：dictionary["key"] = value
+#不要死记成“修改”。更准确地说：给这个 key 赋值。
+#如果 key 已存在，就|覆盖|旧 value；如果 key 不存在，就创建新键值对。

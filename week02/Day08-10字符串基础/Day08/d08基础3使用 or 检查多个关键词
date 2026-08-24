@@ -1,0 +1,35 @@
+# 使用 or 检查多个关键词
+# 目标:
+# 一条工单可能使用不同说法描述同类问题，例如：
+# 无法充电
+# 充电中断
+# 充不进去
+# 只检查一个关键词容易漏掉，所以可以同时检查多个关键词。
+
+# 例题：识别充电相关工单
+
+# fault_description：用户输入的故障描述
+fault_description = input("请输入故障描述：")
+
+# charging_keyword_is_found：是否发现充电相关关键词
+charging_keyword_is_found = (
+    "充电" in fault_description
+    or "充不进" in fault_description
+)
+
+print(f"是否发现充电相关关键词：{charging_keyword_is_found}")
+
+if charging_keyword_is_found:
+    print("可能属于充电故障")
+else:
+    print("未发现充电故障关键词")
+
+
+"""
+注意括号位置
+推荐写成：
+keyword_is_found = (
+    "关键词一" in text
+    or "关键词二" in text
+)
+"""

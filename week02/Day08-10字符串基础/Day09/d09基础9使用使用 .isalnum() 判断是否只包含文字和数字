@@ -1,0 +1,24 @@
+"""
+使用 .isalnum() 判断是否只包含文字和数字
+基本语法
+判断结果 = 字符串.isalnum()
+返回类型是 bool。
+.isalnum() 检查字符串中的每个字符是否都是：
+文字或字母
+或者
+数字
+不能包含空格和特殊符号。
+"""
+
+# model_version_code：用户输入并清理后的模型版本编码
+model_version_code = input("请输入模型版本编码：").strip()
+
+# model_version_code_is_valid：编码是否只包含文字和数字
+model_version_code_is_valid = model_version_code.isalnum()
+
+print(f"模型版本编码是否只包含文字和数字：{model_version_code_is_valid}")
+
+if model_version_code_is_valid:
+    print("模型版本编码格式正确")
+else:
+    print("模型版本编码不能包含空格或特殊符号")

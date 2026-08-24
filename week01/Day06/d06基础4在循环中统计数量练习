@@ -1,0 +1,36 @@
+"""
+独立练习：统计接口成功次数
+
+连续检查 4 次接口调用。
+
+要求：
+
+循环变量：request_number
+每次输入变量：request_is_successful
+成功计数变量：successful_request_count
+输入 1 表示成功，输入 0 表示失败
+每次输出当前调用成功或失败
+最后输出：
+成功的接口调用次数：数量
+接口调用统计结束
+先把计数变量初始化为 0，成功时执行：
+
+successful_request_count = successful_request_count + 1
+
+"""
+#   successful_request_count成功的接口调用次数
+successful_request_count = 0
+#   request_number接口调用编号
+for request_number in range (1, 5):
+    #request_is_successful接口调用是否成功
+    request_is_successful = int(
+        input(f"第{request_number}次是否成功请输入1或0：")
+        )
+    if request_is_successful == 1:
+        print(f"第{request_number}次接口调用成功")
+        successful_request_count = successful_request_count + 1
+    else:
+         print(f"第{request_number}次接口调用失败")
+print(f"成功的接口调用次数{successful_request_count}次")
+print("接口调用统计结束")
+        

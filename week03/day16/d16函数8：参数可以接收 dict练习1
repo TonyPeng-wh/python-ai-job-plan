@@ -1,0 +1,17 @@
+def show_result(result):
+    print(f"文档：{result['document_title']}")
+    print(f"分数：{result['retrieval_score']}")
+
+
+current_result = {
+    "document_title": "动力电池故障诊断手册",
+    "retrieval_score": 0.91
+}
+
+show_result(current_result)
+
+"""
+完整输出是什么？
+文档：动力电池故障诊断手册
+分数：0.91
+"""

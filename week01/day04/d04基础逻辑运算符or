@@ -1,0 +1,33 @@
+"""
+API 异常告警
+
+假设一个 AI 服务规定：
+
+API 状态不是 "ok"，需要告警
+或者响应时间超过 3000 毫秒，也需要告警
+
+只要其中任意一个问题出现，就触发告警。
+"""
+# api_status：API 状态
+api_status = input("请输入 API 状态：")
+
+# response_time_ms：响应时间，单位为毫秒
+response_time_ms = int(input("请输入响应时间（毫秒）："))
+
+
+# api_status_is_abnormal：API 状态是否异常
+api_status_is_abnormal = api_status != "ok"
+
+# response_time_is_too_long：响应时间是否过长
+response_time_is_too_long = response_time_ms > 3000
+
+# alert_is_needed：是否需要告警
+# 只要 API 异常或者响应时间过长，就需要告警
+alert_is_needed = (
+    api_status_is_abnormal or response_time_is_too_long
+)
+
+
+print(f"API 状态是否异常：{api_status_is_abnormal}")
+print(f"响应时间是否过长：{response_time_is_too_long}")
+print(f"是否需要告警：{alert_is_needed}")

@@ -1,0 +1,26 @@
+"""
+d16函数11：函数处理 list + dict
+这个很重要，因为以后 AI 工单、RAG 检索结果、用户反馈经常都是这种结构：
+"""
+feedback_list = [
+    {
+        "category": "回答错误",
+        "processed": False
+    },
+    {
+        "category": "检索失败",
+        "processed": True
+    }
+]
+
+def count_unprocessed_feedback(feedbacks):
+    unprocessed_count = 0
+
+    for current_feedback in feedbacks:
+        if current_feedback["processed"] == False:
+            unprocessed_count = unprocessed_count + 1
+
+    return unprocessed_count
+
+result = count_unprocessed_feedback(feedback_list)
+print(result)

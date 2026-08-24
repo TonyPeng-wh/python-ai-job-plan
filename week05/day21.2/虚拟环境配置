@@ -1,0 +1,32 @@
+手动新建 .venv 文件夹
+→ 只是一个空的普通文件夹
+
+python -m venv .venv
+→ 自动创建文件夹
+→ 同时在里面建立真正的 Python 虚拟环境
+
+===========================================
+
+下一步应该学“激活”
+
+你现在用的是 Windows PowerShell，在当前项目根目录下，可以执行：
+
+.venv\Scripts\Activate.ps1
+
+如果成功，终端前面通常会变成类似：
+
+(.venv) PS C:\code\python-ai-job-plan>
+
+看到 (.venv)，就表示当前终端已经进入这个项目的虚拟环境。
+
+================
+点击 VS Code 的“运行 Python 文件”
+→ VS Code 可以直接调用 .venv\Scripts\python.exe
+→ 不一定要求终端先激活
+
+你自己在终端输入：
+python xxx.py
+pip install ...
+→ 最好先激活 .venv
+→ 这样 python / pip 才明确指向当前虚拟环境
+============

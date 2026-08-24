@@ -1,0 +1,18 @@
+# device_code：用户输入并清理后的设备编号
+device_code = input("请输入设备编号：").strip()
+
+if len(device_code) > 0:
+    # status_code：设备编号的最后一个字符
+    status_code = device_code[-1]
+    print(f"设备状态字符：{status_code}")
+    if status_code == "A":
+        print("设备正常运行")
+    elif status_code == "M":
+        print("设备正在维护")
+    elif status_code == "F":
+        print("设备发生故障")
+    else:
+        print("无法识别设备状态")
+
+else:
+    print("设备编号不能为空")

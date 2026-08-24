@@ -1,0 +1,78 @@
+# 【字典综合练习 2】AI 工单批量复核
+
+ticket_list = [
+    {
+        "ticket_id": "TKT-001",
+        "category": "超时故障",
+        "priority": "HIGH",
+        "resolved": False
+    },
+    {
+        "ticket_id": "TKT-002",
+        "category": "网络故障",
+        "priority": "LOW",
+        "resolved": True
+    },
+    {
+        "ticket_id": "TKT-003",
+        "category": "超时故障",
+        "priority": "HIGH",
+        "resolved": False
+    },
+    {
+        "ticket_id": "TKT-004",
+        "category": "鉴权故障",
+        "priority": "MEDIUM",
+        "resolved": True
+    }
+]
+
+# 1. 输出工单总数
+# ticket_count:工单总数
+ticket_count = len(ticket_list)
+print(ticket_count)
+
+# 2. 逐条输出工单基本信息,遍历 ticket_list。
+for current_ticket in ticket_list:          # 从 ticket_list 中，一条一条取出工单。
+    ticket_id = current_ticket["ticket_id"]
+    category = current_ticket["category"]
+    priority = current_ticket["priority"]
+    print(f"工单编号:{ticket_id}")
+    print(f"故障类型：{category}")
+    print(f"优先级：{priority}")
+
+# 3. 统计“超时故障”数量
+timeout_ticket_count = 0
+for current_ticket in ticket_list:
+    if current_ticket["category"] == "超时故障":
+        timeout_ticket_count = timeout_ticket_count + 1
+
+print(f"超时故障工单数量：{timeout_ticket_count}")
+
+# 4. 统计未解决工单数量
+unresolved_ticket_count = 0
+for current_ticket in ticket_list:
+    if not current_ticket["resolved"]:
+        unresolved_ticket_count = unresolved_ticket_count + 1
+print(f"未解决工单数量：{unresolved_ticket_count}")
+
+# 5. 找出所有 HIGH 优先级工单
+for current_ticket in ticket_list:
+    priority = current_ticket["priority"]
+
+    if priority == "HIGH":
+        ticket_id = current_ticket["ticket_id"]
+        print(f"高优先级工单：{ticket_id}")
+
+# 6. 检查每条工单有没有 model_suggestion
+for current_ticket in ticket_list:
+    model_suggestion_exists = "model_suggestion" in current_ticket
+if model_suggestion_exists:
+    print("存在")
+else:
+    current_ticket["model_suggestion"] = "待生成"
+
+# 7. 输出处理后的所有工单字段
+for current_ticket in ticket_list:
+    for current_key, current_value in current_ticket.items():
+        print(f"{current_key}:{current_value}")

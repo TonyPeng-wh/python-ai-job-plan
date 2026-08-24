@@ -1,0 +1,60 @@
+#   parsing_succeeded 文档解析是否成功
+parsing_succeeded = False
+
+#   attempt_number 当前解析尝试编号
+for attempt_number in range(1, 4):
+    #   parsing_is_successful 当前解析是否成功
+    parsing_is_successful = int(
+        input(f"第{attempt_number}次解析是否成功？请输入1或0：")
+    )
+
+    if parsing_is_successful == 1:
+        parsing_succeeded = True
+        print(f"第{attempt_number}次解析成功")
+        break
+    else:
+        print(f"第{attempt_number}次解析失败")
+
+if parsing_succeeded:
+    print("文档解析成功")
+else:
+    print("文档解析失败，需要人工处理")
+
+print("文档解析重试结束")
+
+
+'''
+break 的执行逻辑
+
+假设输入：
+
+0
+1
+
+状态变化如下：
+
+开始：parsing_succeeded = False
+
+第1次失败：
+parsing_succeeded 仍然是 False
+继续下一轮
+
+第2次成功：
+parsing_succeeded 改成 True
+执行 break
+第3次不再执行
+
+循环结束后：
+
+if parsing_succeeded:
+
+此时相当于：
+
+if True:
+
+所以输出：
+
+文档解析成功
+
+如果三次都输入 0，parsing_succeeded 一直是 False，最终进入 else。
+'''

@@ -1,0 +1,70 @@
+#   字典 dict ⑥：get() 安全读取 value
+"""
+上一节你学的是："priority" in ticket_info 先判断 key 是否存在，再读取。
+现在学习一种更简洁、更安全的读取方式：get()
+
+
+"""
+#1. 基本写法
+ticket_info = {
+    "ticket_id": "TKT-001",
+    "category": "超时故障"
+}
+
+ticket_priority = ticket_info.get("priority")
+
+print(ticket_priority)
+
+"""
+dictionary["key"]
+→ key 必须存在
+
+dictionary.get("key")
+→ key 不存在也不会直接报错
+"""
+#get() 还能指定“找不到时用什么
+model_result = {
+    "model_name": "deepseek"
+}
+
+retry_count = model_result.get("retry_count", 0)    # 因为 "retry_count" 不存在，所以返回：0
+
+print(retry_count)
+
+# 工作场景:
+"""
+AI 模型调用结果可能是：
+model_result = {
+    "model_name": "deepseek",
+    "quality_score": 0.91
+}
+有些请求可能没有发生重试，所以系统未必有：
+"retry_count"
+可以：
+retry_count = model_result.get("retry_count", 0)
+
+print(f"重试次数：{retry_count}")
+如果没有这个 key：重试次数：0
+这比直接：model_result["retry_count"]更稳妥。
+
+"""
+# 6. get() 返回的数据类型,仍然取决于最终得到的 value。
+# model_name = model_result.get("model_name")得到："deepseek" → str
+# 
+# quality_score = model_result.get("quality_score")得到：0.91 → float
+#
+# retry_count = model_result.get("retry_count", 0)得到：0 → int
+#
+#所以 get() 本身不会固定返回某一种类型。
+
+
+# =====in 和 get() 怎么选？=====
+# 当前阶段可以这样理解：如果你不仅想读取，还需要根据“有没有这个 key”走不同业务分支：
+# if "priority" in ticket_info:
+#     ...
+# else:
+#     ...
+# 适合用：in
+
+# 如果你只是想：有就拿值，没有就给一个默认值。
+# 更适合：get()

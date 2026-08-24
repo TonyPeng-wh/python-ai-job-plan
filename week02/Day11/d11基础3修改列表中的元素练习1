@@ -1,0 +1,14 @@
+# model_scores = [0.81, 0.73, 0.90, 0.85]
+
+# second_score = model_scores[1] = 0.88
+# last_score = model_scores[-1] = 0.92
+
+# print(model_scores)
+
+
+model_scores = [0.81, 0.73, 0.90, 0.85]
+
+model_scores[1] = 0.88
+model_scores[-1] = 0.92
+
+print(model_scores)

@@ -1,0 +1,30 @@
+#   用 for 把列表里的元素一个一个取出来处理。
+# 基本语法:
+# for 元素变量 in 列表变量:
+#     每一轮要执行的代码
+# 例如：
+model_names = ["qwen", "deepseek", "gpt", "glm"]
+
+for model_name in model_names:          #从 model_names 中一个一个取元素，每取出一个，就把它暂时保存到 model_name。
+    print(model_name)
+
+# for 不要求当前元素变量提前定义；for 当前元素变量 in 列表: 这一行本身就会在每轮给这个变量赋值。
+
+
+# 可以在循环里继续判断
+retrieval_scores = [0.82, 0.91, 0.76, 0.88]
+
+for current_score in retrieval_scores:
+    if current_score >= 0.80:
+        print(f"{current_score}：检索评分合格")
+    else:
+        print(f"{current_score}：检索评分偏低")
+#所以判断代码必须缩进在：for内部
+
+
+# for 列表 和之前的 for range() 有什么区别
+# for ... in range(...)
+# → 按数字范围循环
+
+# for ... in list
+# → 按列表元素循环

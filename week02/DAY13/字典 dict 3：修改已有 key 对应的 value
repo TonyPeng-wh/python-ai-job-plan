@@ -1,0 +1,19 @@
+#   字典 dict ③：修改已有 key 对应的 value
+#   1. 基本语法
+ticket_info = {
+    "ticket_id": "TKT-001",
+    "category": "超时故障",
+    "priority": "LOW"
+}
+
+ticket_info["priority"] = "HIGH"
+
+print(ticket_info)
+# 工作场景：修改模型调用结果
+model_result = {
+    "model_name": "deepseek",
+    "quality_score": 0.76,
+    "request_succeeded": False
+}
+model_result["quality_score"] = 0.88
+model_result["request_succeeded"] = True

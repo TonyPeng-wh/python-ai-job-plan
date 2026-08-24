@@ -1,0 +1,61 @@
+"""
+# valid_result_count：累计有效输出数量
+valid_result_count = 0
+
+# invalid_result_count：累计无效输出数量
+invalid_result_count = 0
+
+# result_number：当前模型输出编号
+for result_number in range(1, 5):
+    # result_is_valid：当前输出结构是否有效
+    result_is_valid = int(
+        input(f"第{result_number}次模型输出结构是否有效？请输入1或0：")
+    )
+
+    if result_is_valid == 1:
+        print(f"第{result_number}次模型输出结构有效")
+        valid_result_count = valid_result_count + 1
+    else:
+        print(f"第{result_number}次模型输出结构无效")
+        invalid_result_count = invalid_result_count + 1
+
+print(f"有效输出数量：{valid_result_count}")
+print(f"无效输出数量：{invalid_result_count}")
+print("结构化输出检查结束")
+"""
+
+
+
+#total_ticket_count本次需要检查的工单总数量
+total_ticket_count = int(input(f"请输入工单总数："))
+
+if total_ticket_count > 0:
+    #successful_classification_count：累计自动分类成功的工单数量
+    successful_classification_count = 0
+
+    #manual_review_count：累计需要人工复核的工单数量
+    manual_review_count = 0
+    #ticket_number:当前工单编号
+    for ticket_number in range(1, total_ticket_count + 1):
+    #classification_is_successful当前工单是否自动分类成功
+        classification_is_successful = int(
+            input(f"第{ticket_number}份工单是否自动分类成功1或者0：")
+        )
+        if classification_is_successful == 1:  
+            successful_classification_count = successful_classification_count + 1
+            print(f"第{ticket_number}条工单自动分类成功")
+        else:
+            manual_review_count = manual_review_count + 1
+            print(f"第{ticket_number}条工单需要人工复核")
+    #classification_success_rate自动分类成功率
+    classification_success_rate = (
+        successful_classification_count / total_ticket_count * 100
+    )
+    print(f"自动分类成功率为{classification_success_rate:.1f}%")
+    print(f"自动分类成功数量{successful_classification_count}")
+    print(f"需要人工复核数量{manual_review_count}")
+
+else:
+    print("工单总数必须大于0")
+
+print("工单分类统计结束")

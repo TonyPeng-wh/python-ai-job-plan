@@ -1,0 +1,22 @@
+#   Day05：if...else 双分支判断
+# 基本语法:
+# if 条件:
+#     条件成立时执行的代码
+# else:
+#     条件不成立时执行的代码
+# 条件为 True  → 执行 if 下面的代码
+# 条件为 False → 执行 else 下面的代码
+
+
+#   retrieval_scoreRAG检索分数
+retrieval_score = float(input("请输入RAG检索分数："))
+
+#   quality_threshold检索合格阈值
+quality_threshold = 0.75
+
+if retrieval_score >= 0.75:
+    print("合格，可以生成回答")
+else:                               #else后面一定要冒号
+    print("不合格，不能生成回答")
+
+print("结束")

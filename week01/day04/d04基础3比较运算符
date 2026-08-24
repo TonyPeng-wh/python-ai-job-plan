@@ -1,0 +1,61 @@
+"""
+
+| 运算符  | 含义    | 示例                       | 结果 bool    |
+| ---- | ----- | ------------------------ | ------ |
+| `>`  | 大于    | `0.8 > 0.7`              | `True` |
+| `<`  | 小于    | `1500 < 2000`            | `True` |
+| `>=` | 大于或等于 | `0.75 >= 0.75`           | `True` |
+| `<=` | 小于或等于 | `2000 <= 2000`           | `True` |
+| `==` | 等于    | `"success" == "success"` | `True` |
+| `!=` | 不等于   | `"timeout" != "success"` | `True` |
+
+1.使用 >、<、>=、<=、==、!=
+2.理解比较结果一定是布尔值 True 或 False
+3.区分赋值运算符 = 和相等比较运算符 ==
+4.判断 RAG 检索分数、响应时间和模型调用状态是否达到项目标准
+例子：
+retrieval_score = 0.82
+score_meets_standard = retrieval_score >= 0.75
+
+print(score_meets_standard)
+print(type(score_meets_standard))
+结果：
+True
+<class 'bool'>
+
+
+题目：
+假设某个企业知识库 RAG 项目制定了以下练习标准：
+
+检索分数不低于 0.75
+响应时间不超过 2000 毫秒
+模型调用状态必须是 "success"
+
+这里的 0.75 和 2000 是本次练习使用的项目标准，不是所有 RAG 系统通用的固定标准。
+"""
+
+# retrieval_score：检索分数
+retrieval_score = float(input("请输入RAG检索分数(0~1):"))
+
+# response_time_ms：响应时间，单位是毫秒
+response_time_ms = int(input("请输入响应时间(毫秒):"))
+
+# model_status：模型调用状态
+model_status = input("请输入模型调用状态:")
+
+# score_meets_standard：分数是否达到标准
+score_meets_standard = retrieval_score >= 0.75
+
+# response_time_meets_standard：响应时间是否达到标准
+response_time_meets_standard = response_time_ms <= 2000
+
+# model_call_succeeded：模型调用是否成功
+model_call_succeeded = model_status == "success"
+
+# model_call_failed：模型调用是否失败
+model_call_failed = model_status == "failed"
+
+print(f"检索分数是否合格:{score_meets_standard}")
+print(f"响应时间是否合格:{response_time_meets_standard}")
+print(f"模型调用是否成功:{model_call_succeeded}")
+print(f"模型调用是否失败:{model_call_failed}")

@@ -1,0 +1,18 @@
+"""
+函数⑲：一个函数调用另一个函数
+函数里面也可以调用另一个函数。
+"""
+def ticket_needs_review(priority):
+    return priority == "HIGH"
+
+
+def process_ticket(priority):
+    needs_review = ticket_needs_review(priority)
+
+    if needs_review:
+        print("提交人工复核")
+    else:
+        print("正常处理")
+
+
+process_ticket("HIGH")

@@ -1,0 +1,73 @@
+"""
+=====AI求职学习卡片=====
+程序需要接收：
+
+姓名
+专业
+目标城市
+目标岗位
+每周计划学习小时数
+是否已经完成Python环境搭建
+
+========== AI求职学习卡片 ==========
+姓名：TonyPeng
+专业：新能源汽车工程
+目标城市：深圳
+目标岗位：AI应用工程师
+每周学习时间：20小时
+环境搭建完成：True
+平均每天学习：2.9小时
+====================================
+
+
+限制条件：
+
+至少使用6个变量
+至少包含 str、int、float、bool 四种类型
+至少使用一次 input()
+至少使用一次 int()
+至少使用一次 type()
+输出部分使用 f-string
+文件开头添加程序说明
+
+
+自测标准
+
+完成后，确认自己能够回答：
+
+print(name) 和 print("name") 有什么区别？
+10 和 "10" 有什么区别？
+True 和 "True" 有什么区别？
+为什么 input() 得到的数字默认仍是字符串？
+= 在 Python 中是什么意思？
+type() 有什么作用？
+为什么变量名 weekly hours 是错误的？
+为什么 20 / 7 的结果是 float？
+
+"""
+
+print()
+print("==========AI求职卡片===========")
+name = input("请输入姓名：")
+major = input("请输入专业：")
+target_city = input("请输入目标城市：")
+target_role = input("请输入目标岗位：")
+weekly_hours = int(input("请输入每周学习时长："))
+daily_hours = float(weekly_hours/7)     #float在用/做除法可以省略
+is_finished_python_environment = True
+
+print(f"姓名:{name}")
+print(f"专业:{major}")
+print(f"目标城市:{target_city}")
+print(f"目标岗位:{target_role}")
+print(f"每周学习时长:{weekly_hours}")
+print(f"环境搭建完成:{is_finished_python_environment}")
+print(f"平均每天学习:{daily_hours:.1f}")
+
+print(type(name))
+print(type(major))
+print(type(target_role))
+print(type(target_city))
+print(type(weekly_hours))
+print(type(daily_hours))
+print(type(is_finished_python_environment))

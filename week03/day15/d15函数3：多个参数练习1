@@ -1,0 +1,8 @@
+def show_ticket(ticket_code, ticket_category):
+    print(f"工单编号：{ticket_code}")
+    print(f"工单分类：{ticket_category}")
+
+
+current_code = "TK1008"
+
+show_ticket(current_code, "充电故障")

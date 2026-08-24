@@ -1,0 +1,19 @@
+#   使用 len() 获取字符串长度
+#   基本语法：len(字符串)
+# text_length = len("你好")
+# print(text_length)
+
+# user_query：用户输入的问题
+user_query = input("请输入需要查询的问题：")
+
+# query_length：用户问题的字符数量
+query_length = len(user_query)
+
+print(f"问题字符数量：{query_length}")
+
+if query_length == 0:
+    print("问题不能为空")
+elif query_length < 5:
+    print("问题过短，请补充更多信息")
+else:
+    print("问题长度合格，可以进行知识库检索")

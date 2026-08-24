@@ -1,0 +1,44 @@
+#   raw_ticket_text:原始工单内容
+raw_ticket_text = input("请输入原始工单内容：")
+
+#   normalized_ticket_text:标准化后的工单内容
+normalized_ticket_text =(raw_ticket_text
+                         .strip()
+                         .lower()                         
+)
+print(f"标准化后的工单内容：{normalized_ticket_text}")
+
+#   ticket_text_is_empty:工单内容是否为空
+ticket_text_is_empty = len(normalized_ticket_text) == 0
+
+if ticket_text_is_empty:
+    print("故障描述不能为空")
+else:
+    #   auth_error_exists:是否存在鉴权错误关键词   
+    auth_error_exists = (
+        "api key" in normalized_ticket_text
+         or "unauthorized" in normalized_ticket_text
+        )
+    #   timeout_error_exists:是否存在超时关键词
+    timeout_error_exists = (
+        "timeout" in normalized_ticket_text
+    )
+    #   network_error_exists:是否存在网络关键词
+    network_error_exists =(
+        "network" in normalized_ticket_text
+    )
+    #   timeout_count:超时次数
+    timeout_count = normalized_ticket_text.count("timeout")
+    #   ticket_category:工单类型
+    if auth_error_exists:
+        ticket_category = "鉴权故障"
+    elif timeout_error_exists:
+        ticket_category = "超时故障"
+    elif network_error_exists:
+        ticket_category = "网络故障"
+    else:
+        ticket_category = "其他故障"
+
+print(f"工单类别：{ticket_category}")
+print(f"timeout 出现次数：{timeout_count}")
+

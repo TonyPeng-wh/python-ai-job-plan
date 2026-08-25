@@ -1,5 +1,4 @@
 ## Repository Structure
-
 - `python_basic/`：Python 学习代码
 - `requirements.txt`：Python 项目依赖
 

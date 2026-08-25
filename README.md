@@ -1034,4 +1034,4 @@ assert
 > **代码工程化、数据处理能力，以及真实 AI 模型 API 应用开发能力。**
 # Python AI Application Engineer Learning Plan
 Git branch practice
-Git branch practice
+Git / GitHub：已完成本地版本管理、分支与远程仓库基础，正在进行 Pull Request 练习。

@@ -1,5 +1,5 @@
 # 保存测试数据、调用其他模块、负责最终输出。
-from feedback_utils import (
+from python_basic.week03.交付.ai_feedback_monitor.feedback_utils import (
     count_total_feedbacks,
     count_answer_errors,
     count_unprocessed_feedbacks,
@@ -7,7 +7,7 @@ from feedback_utils import (
     get_feedback_categories
 )
 
-from quality_utils import get_quality_status
+from python_basic.week03.交付.ai_feedback_monitor.quality_utils import get_quality_status
 
 feedback_list = [
     {

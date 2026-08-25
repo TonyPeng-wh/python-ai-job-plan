@@ -1,4 +1,4 @@
-import feedbacks_utils
+import python_basic.week03.day18.模块综合练习.feedbacks_utils as feedbacks_utils
 
 feedback_list = [
     {"category": "回答错误", "processed": False},

@@ -1,3 +1,8 @@
+## Repository Structure
+- `python_basic/`：Python 学习代码
+- `requirements.txt`：Python 项目依赖
+
+
 # Python AI Application Engineer Learning Plan
 
 面向 **AI 应用工程师 / 大模型应用开发 / RAG / Agent / 智能制造 + AI** 方向的个人学习与项目实践仓库。

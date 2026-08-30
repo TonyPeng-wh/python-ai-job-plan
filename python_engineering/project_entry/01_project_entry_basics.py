@@ -14,6 +14,7 @@ def load_fault_data(data_file_path):
             fault_data = json.load(file)
         
     except FileNotFoundError as error:
+        # 文件不存在时输出异常信息
         print(f"数据文件不存在：{error}")
         return []
     
@@ -66,3 +67,4 @@ def main():
 if __name__ == "__main__":
     # 程序入口
     main()
+    
